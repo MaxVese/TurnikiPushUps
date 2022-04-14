@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.wallet.turnikipushups.fragments.MainFragment"
+        android:name="com.wallet.turnikipushups.ui.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 </navigation>

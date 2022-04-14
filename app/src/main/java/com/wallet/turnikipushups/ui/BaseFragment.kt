@@ -1,4 +1,4 @@
-package com.wallet.turnikipushups.fragments
+package com.wallet.turnikipushups.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,6 +34,7 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
     open fun findNavController(): NavController {
         return Navigation.findNavController(requireView())
     }
+
 
     inline fun withBinding(block: T.() -> Unit) {
         block(binding!!)
