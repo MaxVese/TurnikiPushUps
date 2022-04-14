@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TurnikiPushUps">
         <activity
-            android:name=".StartActivity"
+            android:name=".activities.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"/>
 
         <meta-data

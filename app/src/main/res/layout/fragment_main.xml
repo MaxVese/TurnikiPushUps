@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".fragments.MainFragment">
+
+    <TextView
+        android:id="@+id/bestText"
+        style="@style/text10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:text="@string/best"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bestCircle"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginStart="@dimen/_9sdp"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/bestText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bestValue"
+        style="@style/text10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/background"
+        app:layout_constraintBottom_toBottomOf="@+id/bestCircle"
+        app:layout_constraintEnd_toEndOf="@+id/bestCircle"
+        app:layout_constraintStart_toStartOf="@+id/bestCircle"
+        app:layout_constraintTop_toTopOf="@+id/bestCircle" />
+
+    <TextView
+        android:id="@+id/totalText"
+        style="@style/text10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="@string/total"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/bestCircle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/totalCircle"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginStart="@dimen/_9sdp"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/totalText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/blue" />
+
+    <TextView
+        android:id="@+id/totalValue"
+        style="@style/text10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/background"
+        app:layout_constraintBottom_toBottomOf="@+id/totalCircle"
+        app:layout_constraintEnd_toEndOf="@+id/totalCircle"
+        app:layout_constraintStart_toStartOf="@+id/totalCircle"
+        app:layout_constraintTop_toTopOf="@+id/totalCircle" />
+
+    <TextView
+        android:id="@+id/averageText"
+        style="@style/text10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:text="@string/average"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/totalCircle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/averageCircle"
+        android:layout_width="@dimen/_17sdp"
+        android:layout_height="@dimen/_17sdp"
+        android:layout_marginStart="@dimen/_9sdp"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/averageText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/blue" />
+
+    <TextView
+        android:id="@+id/averageValue"
+        style="@style/text10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/background"
+        app:layout_constraintBottom_toBottomOf="@+id/averageCircle"
+        app:layout_constraintEnd_toEndOf="@+id/averageCircle"
+        app:layout_constraintStart_toStartOf="@+id/averageCircle"
+        app:layout_constraintTop_toTopOf="@+id/averageCircle" />
+
+
+    <ImageView
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:src="@drawable/ic_setting"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintEnd_toStartOf="@+id/notificationButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/averageCircle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/notificationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_notification"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/settingsButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logoWithMan"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_261sdp"
+        android:layout_marginTop="@dimen/_68sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_logo_with_men"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_46sdp"
+        android:layout_marginHorizontal="@dimen/_65sdp"
+        android:layout_marginTop="@dimen/_36sdp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoWithMan" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        style="@style/text20px"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_58sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:backgroundTint="@color/red"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/workout"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_32sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/freestyle"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:backgroundTint="@color/background"
+        android:fontFamily="@font/inter"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/freestyle"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        app:cornerRadius="@dimen/_40sdp"
+        app:layout_constraintEnd_toStartOf="@+id/statistics"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialButton"
+        app:strokeColor="@color/blue" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/statistics"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_42sdp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:backgroundTint="@color/background"
+        android:fontFamily="@font/inter"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/statistics"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        app:cornerRadius="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/freestyle"
+        app:layout_constraintTop_toBottomOf="@+id/materialButton"
+        app:strokeColor="@color/blue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

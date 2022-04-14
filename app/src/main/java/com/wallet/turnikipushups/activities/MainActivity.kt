@@ -1,7 +1,8 @@
-package com.wallet.turnikipushups
+package com.wallet.turnikipushups.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.wallet.turnikipushups.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

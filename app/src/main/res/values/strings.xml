@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">TurnikiPushUps</string>
     <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ,\nТРЕНУЙСЯ!</string>
+    <string name="best">Лучший</string>
+    <string name="total">Всего</string>
+    <string name="average">Среднее</string>
+    <string name="workout">Тренировка</string>
+    <string name="freestyle">Фристайл</string>
+    <string name="statistics">Статистика</string>
 </resources>
