@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import com.wallet.turnikipushups.App
+import com.wallet.turnikipushups.R
 import com.wallet.turnikipushups.databinding.FragmentMainBinding
 import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.ui.BaseFragment
@@ -16,7 +17,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
     private val viewModel:MainViewModel by viewModels {
         ViewModelFactory{
-            (requireContext().applicationContext as App).appComponent.mainViewModel()
+            getAppComponent(requireContext()).mainViewModel()
         }
     }
 
@@ -26,6 +27,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             Log.d("mylog",it.toString())
         }
         viewModel.getAllStats()
+        withBinding {
+            freestyle.setOnClickListener {
+                findNavController().navigate(R.id.action_mainFragment_to_freestyleFragment)
+            }
+        }
     }
 
 }

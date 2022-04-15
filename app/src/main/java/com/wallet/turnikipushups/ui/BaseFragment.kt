@@ -1,5 +1,6 @@
 package com.wallet.turnikipushups.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
+import com.wallet.turnikipushups.App
+import com.wallet.turnikipushups.di.component.AppComponent
 
 abstract class BaseFragment<T : ViewBinding> : Fragment() {
     var binding: T? = null
@@ -35,6 +38,9 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         return Navigation.findNavController(requireView())
     }
 
+    fun getAppComponent(context: Context):AppComponent{
+        return (context.applicationContext as App).appComponent
+    }
 
     inline fun withBinding(block: T.() -> Unit) {
         block(binding!!)

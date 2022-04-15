@@ -9,5 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="com.wallet.turnikipushups.ui.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_freestyleFragment"
+            app:destination="@id/freestyleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/freestyleFragment"
+        android:name="com.wallet.turnikipushups.ui.freestyle.FreestyleFragment"
+        android:label="fragment_freestyle"
+        tools:layout="@layout/fragment_freestyle" />
 </navigation>

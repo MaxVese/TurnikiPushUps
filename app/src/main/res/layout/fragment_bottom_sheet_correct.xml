@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.freestyle.BottomSheetCorrectFragment">
+
+    <ImageView
+        android:id="@+id/minusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_33sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/ic_minus_square"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/plusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_33sdp"
+        android:src="@drawable/ic_plus_square"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:valueFrom="0"
+        android:valueTo="300"
+        android:stepSize="1"
+        app:tickVisible="false"
+        app:layout_constraintBottom_toBottomOf="@+id/minusBtn"
+        app:layout_constraintEnd_toStartOf="@+id/plusBtn"
+        app:layout_constraintStart_toEndOf="@+id/minusBtn"
+        app:layout_constraintTop_toTopOf="@+id/minusBtn"
+        app:thumbColor="@color/white"
+        app:thumbStrokeColor="@color/blue"
+        app:thumbStrokeWidth="@dimen/_1sdp"
+        app:thumbRadius="@dimen/_12sdp"
+        app:trackColorActive="@color/blue"
+        app:trackColorInactive="@color/gray"
+        app:trackHeight="@dimen/_6sdp" />
+
+    <TextView
+        android:id="@+id/text_minus10"
+        style="@style/text24px"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rounded_background_text"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="-10"
+        app:layout_constraintEnd_toStartOf="@+id/text_plus10"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/slider"
+        app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+    <TextView
+        android:id="@+id/text_plus10"
+        style="@style/text24px"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rounded_background_text"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="+10"
+        app:layout_constraintEnd_toEndOf="@+id/slider"
+        app:layout_constraintStart_toEndOf="@id/text_minus10"
+        app:layout_constraintTop_toBottomOf="@+id/slider" />
+
+    <TextView
+        android:id="@+id/text_minus50"
+        style="@style/text24px"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rounded_background_text"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="-50"
+        app:layout_constraintEnd_toStartOf="@+id/text_plus50"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/slider"
+        app:layout_constraintTop_toBottomOf="@+id/text_minus10" />
+
+    <TextView
+        android:id="@+id/text_plus50"
+        style="@style/text24px"
+        android:layout_width="@dimen/_67sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rounded_background_text"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="+50"
+        app:layout_constraintEnd_toEndOf="@+id/slider"
+        app:layout_constraintStart_toEndOf="@id/text_minus50"
+        app:layout_constraintTop_toBottomOf="@+id/text_plus10" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/finishBtn"
+        style="@style/text20px"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_58sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:backgroundTint="@color/red"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Продолжить"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_32sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_minus50" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
