@@ -18,4 +18,34 @@
     <string name="time">Время</string>
     <string name="ringtone">Рингтон</string>
     <string name="vibr">Вибрация</string>
+    <string name="settings">Настройки</string>
+    <string name="sinhronize_with_google_fit">Автоматическая синхронизация с Google Fit</string>
+    <string name="turniki_uk_settings"><font color="#FCE94E">Турники.</font><font color="#4575ED">укр</font> <font color="@color/red">Настройки</font></string>
+    <string name="works_only_when_installed_on_the_phone_memory">Работает только при установке на память телефона</string>
+    <string name="widget">Виджет</string>
+    <string name="widget_desc">Для того, чтобы увидеть как использовать виджет Турники.укр</string>
+    <string name="set_train_time">Установить время тренировки</string>
+    <string name="reserve_stat">Резервировать статистику</string>
+    <string name="reserve_stat_desc">Резервировать статистику на SD карту</string>
+    <string name="restore_stat">Восстановить статистику</string>
+    <string name="restore_stat_desc">Восстановить статистику с SD карты</string>
+    <string name="delete_stat">Удалить статистику</string>
+    <string name="delete_stat_desc">Удалить всю статистику</string>
+    <string name="language">Язык</string>
+    <string name="select_language">Выберите язык</string>
+    <string name="localisation">Локализация</string>
+    <string name="help_us_with_localisation">Помочь нам перевести ваш язык</string>
+    <string name="other_settings"><font color="@color/red">Другие настройки</font></string>
+    <string name="turniki_ukr"><font color="#FCE94E">Турники.</font><font color="#4575ED">укр</font></string>
+    <string name="about_company">О компании</string>
+    <string name="pro_version">PRO версия</string>
+    <string name="More_from_our_app">Больше от нашего приложениия</string>
+    <string name="share">Поделиться</string>
+    <string name="share_for_friend">Поделиться с другом</string>
+    <string name="support">Поддержка</string>
+    <string name="Leave_feedback_by_email">Оставить отзыв по ел. почте</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="tyrnik_ukr_version">Турники.укр версия</string>
+    <string name="_2_154_34_version">Версия 2.154.34 Авторское право</string>
+    <string name="reminds_you_to_drink_water">Напоминает вам пить воду</string>
 </resources>
