@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_mainFragment_to_freestyleFragment"
             app:destination="@id/freestyleFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
     </fragment>
     <fragment
         android:id="@+id/freestyleFragment"
         android:name="com.wallet.turnikipushups.ui.freestyle.FreestyleFragment"
         android:label="fragment_freestyle"
         tools:layout="@layout/fragment_freestyle" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.wallet.turnikipushups.ui.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

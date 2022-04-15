@@ -13,4 +13,9 @@
     <string name="start">Старт</string>
     <string name="polozhite_telepfone_v_karman">Положите телефон в карман\nили повесьте на шею</string>
     <string name="proceed">Продолжить</string>
+    <string name="notification">Уведомления</string>
+    <string name="notif_enabled">Уведомление включено</string>
+    <string name="time">Время</string>
+    <string name="ringtone">Рингтон</string>
+    <string name="vibr">Вибрация</string>
 </resources>

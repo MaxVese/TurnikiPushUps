@@ -31,6 +31,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             freestyle.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_freestyleFragment)
             }
+            notificationButton.setOnClickListener {
+                findNavController().navigate(R.id.action_mainFragment_to_notificationFragment)
+            }
         }
     }
 

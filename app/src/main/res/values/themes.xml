@@ -40,6 +40,10 @@
         <item name="android:textSize">@dimen/_8ssp</item>
     </style>
 
+    <style name="text14px" parent="baseText">
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
     <style name="text16pxBlack" parent="baseText">
         <item name="android:textSize">@dimen/_16ssp</item>
         <item name="android:textColor">@color/background</item>
