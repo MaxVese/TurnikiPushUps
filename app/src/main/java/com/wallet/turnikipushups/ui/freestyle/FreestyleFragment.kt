@@ -1,12 +1,8 @@
 package com.wallet.turnikipushups.ui.freestyle
 
-import android.content.Intent
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
-import com.wallet.turnikipushups.activities.MainActivity
 import com.wallet.turnikipushups.databinding.FragmentFreestyleBinding
 import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.ui.BaseFragment
@@ -28,7 +24,7 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
 
     override fun initView() {
         withBinding {
-            PopUps().DetectWirelessCameraPopUp(requireActivity())
+            PopUps().infoPullUpPopUp(requireActivity())
             editBtn.setOnClickListener {
                 BottomSheetCorrectFragment(count){
                     if(it != count.value) count.value = it

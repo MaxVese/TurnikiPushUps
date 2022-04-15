@@ -37,6 +37,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             settingsButton.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
             }
+            statistics.setOnClickListener {
+                findNavController().navigate(R.id.action_mainFragment_to_statisticsFragment)
+            }
         }
     }
 

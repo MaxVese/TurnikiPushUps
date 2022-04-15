@@ -10,6 +10,7 @@
     <color name="background">#0A090E</color>
     <color name="yellow">#FCE94E</color>
     <color name="blue">#4575ED</color>
+    <color name="blue_60">#994575ED</color>
     <color name="red">#D1362B</color>
     <color name="gray">#C4C4C4</color>
     <color name="blue_light">#5CF1F4F7</color>

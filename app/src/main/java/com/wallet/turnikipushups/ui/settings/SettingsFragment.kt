@@ -10,7 +10,11 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>() {
     }
 
     override fun initView() {
-
+        withBinding {
+            toolbar.setOnClickListener {
+                findNavController().popBackStack()
+            }
+        }
     }
 
 }
