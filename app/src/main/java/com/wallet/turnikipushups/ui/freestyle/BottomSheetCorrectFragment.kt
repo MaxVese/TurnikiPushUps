@@ -1,15 +1,17 @@
 package com.wallet.turnikipushups.ui.freestyle
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.wallet.turnikipushups.R
 import com.wallet.turnikipushups.databinding.FragmentBottomSheetCorrectBinding
 
-class BottomSheetCorrectFragment(val startValue:Int,val update:(Int) -> Unit) : BottomSheetDialogFragment() {
+class BottomSheetCorrectFragment(val startValue:MutableLiveData<Int>,val update:(Int) -> Unit) : BottomSheetDialogFragment() {
 
     lateinit var binding:FragmentBottomSheetCorrectBinding
 
@@ -28,7 +30,11 @@ class BottomSheetCorrectFragment(val startValue:Int,val update:(Int) -> Unit) : 
 
     override fun onStart() {
         super.onStart()
-        changeValueSlider(startValue)
+        startValue.observe(viewLifecycleOwner){
+            if(it != binding.slider.value.toInt()){
+                binding.slider.value = it.toFloat()
+            }
+        }
         binding.minusBtn.setOnClickListener {
             changeValueSlider(-1)
         }
@@ -50,7 +56,7 @@ class BottomSheetCorrectFragment(val startValue:Int,val update:(Int) -> Unit) : 
         binding.finishBtn.setOnClickListener {
             dismiss()
         }
-        binding.slider.addOnChangeListener { slider, value, fromUser ->
+        binding.slider.addOnChangeListener { _, value, _ ->
             update(value.toInt())
         }
     }

@@ -116,7 +116,7 @@
         android:backgroundTint="@color/red"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:text="Продолжить"
+        android:text="@string/proceed"
         android:textAllCaps="false"
         app:cornerRadius="@dimen/_32sdp"
         app:layout_constraintBottom_toBottomOf="parent"

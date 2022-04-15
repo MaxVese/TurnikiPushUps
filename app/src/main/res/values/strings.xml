@@ -11,4 +11,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="freestyle_train">Свободная тренировка</string>
     <string name="start">Старт</string>
+    <string name="polozhite_telepfone_v_karman">Положите телефон в карман\nили повесьте на шею</string>
+    <string name="proceed">Продолжить</string>
 </resources>
