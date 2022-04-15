@@ -9,7 +9,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.wallet.turnikipushups.R
 import com.wallet.turnikipushups.databinding.FragmentBottomSheetCorrectBinding
 
-class BottomSheetCorrectFragment(startValue:Int,val update:(Int) -> Unit) : BottomSheetDialogFragment() {
+class BottomSheetCorrectFragment(val startValue:Int,val update:(Int) -> Unit) : BottomSheetDialogFragment() {
 
     lateinit var binding:FragmentBottomSheetCorrectBinding
 
@@ -28,6 +28,7 @@ class BottomSheetCorrectFragment(startValue:Int,val update:(Int) -> Unit) : Bott
 
     override fun onStart() {
         super.onStart()
+        changeValueSlider(startValue)
         binding.minusBtn.setOnClickListener {
             changeValueSlider(-1)
         }
