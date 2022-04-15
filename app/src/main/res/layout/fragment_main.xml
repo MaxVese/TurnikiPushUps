@@ -18,27 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/bestCircle"
-        android:layout_width="@dimen/_17sdp"
-        android:layout_height="@dimen/_17sdp"
-        android:layout_marginStart="@dimen/_9sdp"
-        android:src="@drawable/circle"
-        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
-        app:layout_constraintStart_toEndOf="@+id/bestText"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/bestValue"
         style="@style/text10px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:layout_marginStart="@dimen/_9sdp"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_2sdp"
         android:textColor="@color/background"
-        app:layout_constraintBottom_toBottomOf="@+id/bestCircle"
-        app:layout_constraintEnd_toEndOf="@+id/bestCircle"
-        app:layout_constraintStart_toStartOf="@+id/bestCircle"
-        app:layout_constraintTop_toTopOf="@+id/bestCircle" />
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/bestText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/totalText"
@@ -48,19 +41,8 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:text="@string/total"
         app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
-        app:layout_constraintStart_toEndOf="@+id/bestCircle"
+        app:layout_constraintStart_toEndOf="@+id/bestValue"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/totalCircle"
-        android:layout_width="@dimen/_17sdp"
-        android:layout_height="@dimen/_17sdp"
-        android:layout_marginStart="@dimen/_9sdp"
-        android:src="@drawable/circle"
-        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
-        app:layout_constraintStart_toEndOf="@+id/totalText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/blue" />
 
     <TextView
         android:id="@+id/totalValue"
@@ -69,10 +51,13 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:textColor="@color/background"
-        app:layout_constraintBottom_toBottomOf="@+id/totalCircle"
-        app:layout_constraintEnd_toEndOf="@+id/totalCircle"
-        app:layout_constraintStart_toStartOf="@+id/totalCircle"
-        app:layout_constraintTop_toTopOf="@+id/totalCircle" />
+        android:layout_marginStart="@dimen/_9sdp"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/totalText"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/averageText"
@@ -82,19 +67,8 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:text="@string/average"
         app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
-        app:layout_constraintStart_toEndOf="@+id/totalCircle"
+        app:layout_constraintStart_toEndOf="@+id/totalValue"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/averageCircle"
-        android:layout_width="@dimen/_17sdp"
-        android:layout_height="@dimen/_17sdp"
-        android:layout_marginStart="@dimen/_9sdp"
-        android:src="@drawable/circle"
-        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
-        app:layout_constraintStart_toEndOf="@+id/averageText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/blue" />
 
     <TextView
         android:id="@+id/averageValue"
@@ -103,10 +77,14 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:textColor="@color/background"
-        app:layout_constraintBottom_toBottomOf="@+id/averageCircle"
-        app:layout_constraintEnd_toEndOf="@+id/averageCircle"
-        app:layout_constraintStart_toStartOf="@+id/averageCircle"
-        app:layout_constraintTop_toTopOf="@+id/averageCircle" />
+        android:layout_marginStart="@dimen/_9sdp"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_2sdp"
+        android:background="@drawable/circle"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
+        app:layout_constraintStart_toEndOf="@+id/averageText"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
@@ -118,7 +96,7 @@
         app:layout_constraintBottom_toTopOf="@+id/logoWithMan"
         app:layout_constraintEnd_toStartOf="@+id/notificationButton"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/averageCircle"
+        app:layout_constraintStart_toEndOf="@+id/averageValue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView

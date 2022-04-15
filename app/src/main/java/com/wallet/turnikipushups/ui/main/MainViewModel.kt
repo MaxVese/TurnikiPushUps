@@ -12,7 +12,19 @@ class MainViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao)
 
     val statsPushUps: MutableLiveData<List<StatPushUps>> = MutableLiveData()
 
-        fun getAllStats(){
-            statsPushUps.value = statPushUpsDao.getAll()
-        }
+    fun getAllStats(){
+        statsPushUps.value = statPushUpsDao.getAll()
+    }
+
+    fun getCountWorkouts():Long{
+        return statPushUpsDao.getCountWorkouts()
+    }
+
+    fun getBestCount():Int{
+        return statPushUpsDao.getBestCount()
+    }
+
+    fun getAverageCount():Int{
+        return statPushUpsDao.getAverageCount()
+    }
 }

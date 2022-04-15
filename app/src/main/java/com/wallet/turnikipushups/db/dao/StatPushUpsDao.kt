@@ -18,4 +18,13 @@ interface StatPushUpsDao {
 
     @Query("SELECT * FROM statPushUps")
     fun getAll(): List<StatPushUps>
+
+    @Query("SELECT COUNT(*) FROM statPushUps WHERE count > 0")
+    fun getCountWorkouts():Long
+
+    @Query("SELECT MAX(count) as max FROM statPushUps")
+    fun getBestCount():Int
+
+    @Query("SELECT AVG(count) FROM statPushUps")
+    fun getAverageCount():Int
 }
