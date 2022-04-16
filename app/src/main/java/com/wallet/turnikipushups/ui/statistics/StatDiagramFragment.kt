@@ -40,7 +40,7 @@ class StatDiagramFragment(val pair:Pair<Int,Int>) : BaseFragment<FragmentStatDia
 
 
     private fun setData(count: Pair<Int,Int>) {
-        if (binding.chart.data != null && binding.chart.data.dataSetCount > 0) {
+        if (binding?.chart?.data != null && binding?.chart?.data?.dataSetCount!! > 0) {
             addValueDataSet(count)
         } else {
             createDataSet(count)
@@ -48,12 +48,12 @@ class StatDiagramFragment(val pair:Pair<Int,Int>) : BaseFragment<FragmentStatDia
     }
 
     private fun addValueDataSet(count: Pair<Int,Int>) {
-        val set1 = binding.chart.data.getDataSetByIndex(0) as BarDataSet
+        val set1 = binding?.chart?.data?.getDataSetByIndex(0) as BarDataSet
         set1.addEntry(BarEntry(count.first.toFloat(), count.second.toFloat()))
         set1.notifyDataSetChanged()
-        binding.chart.data.notifyDataChanged()
-        binding.chart.notifyDataSetChanged()
-        binding.chart.invalidate()
+        binding?.chart?.data?.notifyDataChanged()
+        binding?.chart?.notifyDataSetChanged()
+        binding?.chart?.invalidate()
     }
 
     private fun createDataSet(count: Pair<Int,Int>) {
@@ -66,7 +66,7 @@ class StatDiagramFragment(val pair:Pair<Int,Int>) : BaseFragment<FragmentStatDia
         val dataSets = ArrayList<IBarDataSet>()
         dataSets.add(set)
         val data = BarData(dataSets)
-        binding.chart.data = data.apply {
+        binding?.chart?.data = data.apply {
             barWidth = 0.5f
         }
     }

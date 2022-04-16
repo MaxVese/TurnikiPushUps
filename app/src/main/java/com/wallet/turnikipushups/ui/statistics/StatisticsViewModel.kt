@@ -24,31 +24,29 @@ class StatisticsViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao
 
 
     fun getAllStats(){
-        viewModelScope.launch {
-            viewModelScope.launch(Dispatchers.IO) {
-                statPushUpsDao
-                    .getAll()
-                    .collect {
-                        ///Делается список месяцев,с первой записи по последнюю
-                        val minStatByDate =it.minByOrNull {
-                            it.dateWorkout?.atZone(ZoneId.systemDefault())?.toInstant()?.toEpochMilli()!!
-                        }?.dateWorkout
-                        val maxStatByDate = it.maxByOrNull {
-                            it.dateWorkout?.atZone(ZoneId.systemDefault())?.toInstant()?.toEpochMilli()!!
-                        }?.dateWorkout
-                        val listM:MutableList<Pair<Int,Int>> = mutableListOf()
-                        val periodOfMonth = ChronoUnit.MONTHS.between(minStatByDate,maxStatByDate)
-                        for(i in periodOfMonth+1 downTo 0){
-                            val date = minStatByDate?.plusMonths(i)
-                            listM.add(Pair(date!!.year,date.monthValue))
-                        }
-
-                        withContext(Main){
-                            statsPushUps.value =it
-                            listMonths.value = listM
-                        }
+        viewModelScope.launch(Dispatchers.IO) {
+            statPushUpsDao
+                .getAll()
+                .collect {
+                    ///Делается список месяцев,с первой записи по последнюю
+                    val minStatByDate =it.minByOrNull {
+                        it.dateWorkout?.atZone(ZoneId.systemDefault())?.toInstant()?.toEpochMilli()!!
+                    }?.dateWorkout
+                    val maxStatByDate = it.maxByOrNull {
+                        it.dateWorkout?.atZone(ZoneId.systemDefault())?.toInstant()?.toEpochMilli()!!
+                    }?.dateWorkout
+                    val listM:MutableList<Pair<Int,Int>> = mutableListOf()
+                    val periodOfMonth = ChronoUnit.MONTHS.between(minStatByDate,maxStatByDate)
+                    for(i in periodOfMonth+1 downTo 0){
+                        val date = minStatByDate?.plusMonths(i)
+                        listM.add(Pair(date!!.year,date.monthValue))
                     }
-            }
+
+                    withContext(Main){
+                        statsPushUps.value =it
+                        listMonths.value = listM
+                    }
+                }
         }
     }
 }

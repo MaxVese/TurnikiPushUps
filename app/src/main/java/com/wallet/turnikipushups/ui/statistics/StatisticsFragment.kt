@@ -1,15 +1,11 @@
 package com.wallet.turnikipushups.ui.statistics
 
-import android.graphics.DashPathEffect
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.wallet.turnikipushups.databinding.StatisticsFragmentBinding
 import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.ui.BaseFragment
-import java.time.ZoneId
-import java.time.temporal.ChronoUnit
 
 class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
 
@@ -33,11 +29,11 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
                 lifecycle,
                 it
             )
-            binding.viewPager.adapter = staticsPagerAdapter
-            binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            binding?.viewPager?.adapter = staticsPagerAdapter
+            binding?.viewPager?.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
-                    binding.monthText.text = getDateFormat(it[position])
+                    binding?.monthText?.text = getDateFormat(it[position])
                 }
             })
         }
