@@ -10,6 +10,7 @@ import com.wallet.turnikipushups.models.StatPushUps
 @TypeConverters(DateConverter::class)
 @Database(entities = [StatPushUps::class], version = AppDatabase.VERSION, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
+    //TODO строчка
     companion object {
         const val VERSION = 1
 

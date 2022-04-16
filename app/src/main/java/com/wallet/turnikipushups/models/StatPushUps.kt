@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import com.wallet.turnikipushups.db.converters.DateConverter
 import java.time.LocalDateTime
 
-
+//TODO за DateConverter респект
 @Entity(tableName = "statPushUps")
 data class StatPushUps(
     var count:Int = 0,

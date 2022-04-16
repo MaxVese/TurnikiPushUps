@@ -24,6 +24,9 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         return binding!!.root
     }
 
+    /**
+     * TODO пахнет ликами, делай bind и unbind во фрагментах, чтобы не хранить вьюъи из других фрагментов
+     */
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

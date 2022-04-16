@@ -20,7 +20,8 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
         }
     }
 
-    val count:MutableLiveData<Int> = MutableLiveData(0)
+    //TODO в вью модель!!!
+    private val count:MutableLiveData<Int> = MutableLiveData(0)
 
     override fun initView() {
         withBinding {

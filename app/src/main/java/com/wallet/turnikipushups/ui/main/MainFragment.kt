@@ -28,6 +28,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         }
         viewModel.getAllStats()
         withBinding {
+            //TODO перенеси навигацию в отдельный объект и управляй ей через базовую вью модель и базовый фрагмент имея последний выбранный экран в лайв дате или флоу, главное не храни сам Fragment() в нём
             totalValue.text = viewModel.getCountWorkouts().toString()
             bestValue.text = viewModel.getBestCount().toString()
             averageValue.text = viewModel.getAverageCount().toString()

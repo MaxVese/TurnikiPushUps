@@ -15,6 +15,7 @@ import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.ui.BaseFragment
 
 class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
+
     override fun bind(inflater: LayoutInflater): StatisticsFragmentBinding {
         return StatisticsFragmentBinding.inflate(inflater)
     }
@@ -35,6 +36,7 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
 
 
     private fun setData(count: Pair<Int,Int>) {
+        //TODO !! - зло
         if (binding!!.chart.data != null && binding!!.chart.data.dataSetCount > 0) {
             addValueDataSet(count)
         } else {
@@ -43,6 +45,7 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
     }
 
     private fun addValueDataSet(count: Pair<Int,Int>) {
+        //TODO !! - зло
         val set1 = binding!!.chart.data.getDataSetByIndex(0) as BarDataSet
         set1.addEntry(BarEntry(count.first.toFloat(), count.second.toFloat()))
         set1.notifyDataSetChanged()
@@ -62,12 +65,14 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
         val dataSets = ArrayList<IBarDataSet>()
         dataSets.add(set)
         val data = BarData(dataSets)
+        //TODO !! - зло
         binding!!.chart.data = data.apply {
             barWidth = 0.5f
         }
     }
 
     private fun setChartSettings() {
+        //TODO Deprecated - зло
         withBinding {
             chart.description.isEnabled = false
             chart.setTouchEnabled(false)

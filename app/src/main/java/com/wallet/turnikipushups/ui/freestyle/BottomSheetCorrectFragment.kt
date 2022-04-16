@@ -11,7 +11,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.wallet.turnikipushups.R
 import com.wallet.turnikipushups.databinding.FragmentBottomSheetCorrectBinding
 
-class BottomSheetCorrectFragment(val startValue:MutableLiveData<Int>,val update:(Int) -> Unit) : BottomSheetDialogFragment() {
+//TODO я не одобряю конструктор во вьюхах, подумаю над лучшим решением
+class BottomSheetCorrectFragment(private val startValue:MutableLiveData<Int>, val update:(Int) -> Unit) : BottomSheetDialogFragment() {
 
     lateinit var binding:FragmentBottomSheetCorrectBinding
 
@@ -30,11 +31,15 @@ class BottomSheetCorrectFragment(val startValue:MutableLiveData<Int>,val update:
 
     override fun onStart() {
         super.onStart()
+        //TODO выноси логику в отдельный метод и передавай ссылку вторым параметром
         startValue.observe(viewLifecycleOwner){
             if(it != binding.slider.value.toInt()){
                 binding.slider.value = it.toFloat()
             }
         }
+        //TODO почему без вью модели? тебе вообще пох на сохранение состояния?
+        //TODO а если юзеру позвонят?
+        //TODO и зачем раздувать отСтарт?
         binding.minusBtn.setOnClickListener {
             changeValueSlider(-1)
         }

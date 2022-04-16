@@ -11,6 +11,7 @@ import com.wallet.turnikipushups.databinding.InfoPullUpPopupBinding
 import com.wallet.turnikipushups.databinding.TestPullupPopupBinding
 
 class PopUps {
+
     fun infoPullUpPopUp(context: Activity) {
         val customLayout: InfoPullUpPopupBinding =
             InfoPullUpPopupBinding.inflate(LayoutInflater.from(context))

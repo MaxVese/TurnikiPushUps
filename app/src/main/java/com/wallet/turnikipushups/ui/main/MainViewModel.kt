@@ -7,6 +7,7 @@ import com.wallet.turnikipushups.db.dao.StatPushUpsDao
 import com.wallet.turnikipushups.models.StatPushUps
 import javax.inject.Inject
 
+//TODO сделаю базовую вью модель с инициализацией скоупа и джоба
 class MainViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao)
     : ViewModel() {
 

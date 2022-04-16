@@ -1,12 +1,13 @@
 package com.wallet.turnikipushups.db.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.wallet.turnikipushups.models.StatPushUps
 
 
 @Dao
 interface StatPushUpsDao {
+    /*TODO да это придирка, но тут надо пустую строчку держать...красиво так
+    *  TODO функции саспенд*/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(statPushUps: StatPushUps): Long
 
@@ -16,6 +17,7 @@ interface StatPushUpsDao {
     @Delete
     fun delete(vararg statPushUps: StatPushUps)
 
+    //TODO юзай флоу, будет супер круто
     @Query("SELECT * FROM statPushUps")
     fun getAll(): List<StatPushUps>
 
