@@ -47,4 +47,6 @@
     <string name="_2_154_34_version">Версия 2.154.34 Авторское право</string>
     <string name="reminds_you_to_drink_water">Напоминает вам пить воду</string>
     <string name="test_pullup_text">Сделайте как можно больше подтягиваний без остановки. Ваша программа тренировки будет построена по результатам этого теста</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

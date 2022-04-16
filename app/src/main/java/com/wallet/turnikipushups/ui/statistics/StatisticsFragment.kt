@@ -1,18 +1,15 @@
 package com.wallet.turnikipushups.ui.statistics
 
 import android.graphics.DashPathEffect
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.fragment.app.viewModels
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
-import com.wallet.turnikipushups.R
+import androidx.viewpager2.widget.ViewPager2
 import com.wallet.turnikipushups.databinding.StatisticsFragmentBinding
 import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.ui.BaseFragment
+import java.time.ZoneId
+import java.time.temporal.ChronoUnit
 
 class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
 
@@ -28,71 +25,40 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
 
 
     override fun initView() {
-        setChartSettings()
-        for(i in 1..31){
-            setData(Pair(i,i+1/2))
+        viewModel.getAllStats()
+
+        viewModel.listMonths.observe(viewLifecycleOwner){
+            val staticsPagerAdapter = StatisticsPagerAdapter(
+                parentFragmentManager,
+                lifecycle,
+                it
+            )
+            binding.viewPager.adapter = staticsPagerAdapter
+            binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    binding.monthText.text = getDateFormat(it[position])
+                }
+            })
         }
-    }
-
-
-    private fun setData(count: Pair<Int,Int>) {
-        if (binding.chart.data != null && binding.chart.data.dataSetCount > 0) {
-            addValueDataSet(count)
-        } else {
-            createDataSet(count)
+        viewModel.statsPushUps.observe(viewLifecycleOwner){
+            viewModel.mapStatsPushUps.value = it.groupBy { Pair(it.dateWorkout?.year!!,it.dateWorkout?.monthValue!!) }
         }
-    }
-
-    private fun addValueDataSet(count: Pair<Int,Int>) {
-        val set1 = binding.chart.data.getDataSetByIndex(0) as BarDataSet
-        set1.addEntry(BarEntry(count.first.toFloat(), count.second.toFloat()))
-        set1.notifyDataSetChanged()
-        binding.chart.data.notifyDataChanged()
-        binding.chart.notifyDataSetChanged()
-        binding.chart.invalidate()
-    }
-
-    private fun createDataSet(count: Pair<Int,Int>) {
-        val values = ArrayList<BarEntry>()
-        values.add(BarEntry(count.first.toFloat(), count.second.toFloat()))
-        val set = BarDataSet(values, "")
-        set.setGradientColor(resources.getColor(R.color.blue_60,null),resources.getColor(R.color.blue))
-        set.barBorderColor = resources.getColor(android.R.color.transparent,null)
-        set.barBorderWidth = 20f
-//        setLineDataSetSettings(set)
-        val dataSets = ArrayList<IBarDataSet>()
-        dataSets.add(set)
-        val data = BarData(dataSets)
-        binding.chart.data = data.apply {
-            barWidth = 0.5f
-        }
-    }
-
-    private fun setChartSettings() {
         withBinding {
-            chart.description.isEnabled = false
-            chart.setTouchEnabled(false)
-            chart.legend.form = Legend.LegendForm.NONE
-            chart.axisRight.setDrawLabels(false)
-            chart.xAxis.position = XAxis.XAxisPosition.BOTTOM
-            chart.axisLeft.setGridDashedLine(DashPathEffect(FloatArray(2){ 20f },0f))
-            chart.axisLeft.gridLineWidth = 2f
-            chart.axisRight.setGridDashedLine(DashPathEffect(FloatArray(2){ 20f },0f))
-            chart.axisRight.gridLineWidth = 2f
-            chart.xAxis.setDrawGridLines(false)
-            chart.xAxis.textColor = resources.getColor(R.color.white,null)
-            chart.axisLeft.textColor = resources.getColor(R.color.white,null)
-            chart.xAxis.setDrawAxisLine(false)
-            chart.axisRight.setDrawAxisLine(false)
-            chart.axisRight.setDrawGridLines(false)
-            chart.axisLeft.xOffset = 20f
-            chart.axisLeft.setDrawAxisLine(false)
-            chart.xAxis.axisMinimum = 1f
-            chart.xAxis.axisMaximum = 31f
-            chart.xAxis.setLabelCount(15, true)
-            chart.axisLeft.axisMinimum = 0f
-            chart.axisLeft.setLabelCount(7, true)
+            arrowLeft.setOnClickListener {
+                viewPager.currentItem++
+            }
+            arrowRight.setOnClickListener {
+                viewPager.currentItem--
+            }
+            homeBtn.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
+    }
+
+    fun getDateFormat(pair:Pair<Int,Int>):String{
+        return "${ if (pair.second.toString().length == 1) "0${pair.second}" else "${pair.second}" }/${pair.first}"
     }
 
 }
