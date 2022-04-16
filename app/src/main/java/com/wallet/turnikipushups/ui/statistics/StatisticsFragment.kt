@@ -15,6 +15,7 @@ import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.ui.BaseFragment
 
 class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
+
     override fun bind(inflater: LayoutInflater): StatisticsFragmentBinding {
         return StatisticsFragmentBinding.inflate(inflater)
     }
@@ -35,7 +36,7 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
 
 
     private fun setData(count: Pair<Int,Int>) {
-        if (binding!!.chart.data != null && binding!!.chart.data.dataSetCount > 0) {
+        if (binding.chart.data != null && binding.chart.data.dataSetCount > 0) {
             addValueDataSet(count)
         } else {
             createDataSet(count)
@@ -43,26 +44,26 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
     }
 
     private fun addValueDataSet(count: Pair<Int,Int>) {
-        val set1 = binding!!.chart.data.getDataSetByIndex(0) as BarDataSet
+        val set1 = binding.chart.data.getDataSetByIndex(0) as BarDataSet
         set1.addEntry(BarEntry(count.first.toFloat(), count.second.toFloat()))
         set1.notifyDataSetChanged()
-        binding!!.chart.data.notifyDataChanged()
-        binding!!.chart.notifyDataSetChanged()
-        binding!!.chart.invalidate()
+        binding.chart.data.notifyDataChanged()
+        binding.chart.notifyDataSetChanged()
+        binding.chart.invalidate()
     }
 
     private fun createDataSet(count: Pair<Int,Int>) {
         val values = ArrayList<BarEntry>()
         values.add(BarEntry(count.first.toFloat(), count.second.toFloat()))
         val set = BarDataSet(values, "")
-        set.setGradientColor(resources.getColor(R.color.blue_60),resources.getColor(R.color.blue))
-        set.barBorderColor = resources.getColor(android.R.color.transparent)
+        set.setGradientColor(resources.getColor(R.color.blue_60,null),resources.getColor(R.color.blue))
+        set.barBorderColor = resources.getColor(android.R.color.transparent,null)
         set.barBorderWidth = 20f
 //        setLineDataSetSettings(set)
         val dataSets = ArrayList<IBarDataSet>()
         dataSets.add(set)
         val data = BarData(dataSets)
-        binding!!.chart.data = data.apply {
+        binding.chart.data = data.apply {
             barWidth = 0.5f
         }
     }
@@ -79,8 +80,8 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
             chart.axisRight.setGridDashedLine(DashPathEffect(FloatArray(2){ 20f },0f))
             chart.axisRight.gridLineWidth = 2f
             chart.xAxis.setDrawGridLines(false)
-            chart.xAxis.textColor = resources.getColor(R.color.white)
-            chart.axisLeft.textColor = resources.getColor(R.color.white)
+            chart.xAxis.textColor = resources.getColor(R.color.white,null)
+            chart.axisLeft.textColor = resources.getColor(R.color.white,null)
             chart.xAxis.setDrawAxisLine(false)
             chart.axisRight.setDrawAxisLine(false)
             chart.axisRight.setDrawGridLines(false)

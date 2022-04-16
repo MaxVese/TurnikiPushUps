@@ -6,14 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.MutableLiveData
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.wallet.turnikipushups.App
 import com.wallet.turnikipushups.R
 import com.wallet.turnikipushups.databinding.FragmentBottomSheetCorrectBinding
+import com.wallet.turnikipushups.di.ViewModelFactory
+import com.wallet.turnikipushups.ui.BaseFragment
+import com.wallet.turnikipushups.ui.main.MainViewModel
 
-class BottomSheetCorrectFragment(val startValue:MutableLiveData<Int>,val update:(Int) -> Unit) : BottomSheetDialogFragment() {
+class BottomSheetCorrectFragment() : BottomSheetDialogFragment() {
 
     lateinit var binding:FragmentBottomSheetCorrectBinding
+
+    private val viewModel: MainViewModel by viewModels {
+        ViewModelFactory{
+            (requireContext().applicationContext as App).appComponent.mainViewModel()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,9 +39,9 @@ class BottomSheetCorrectFragment(val startValue:MutableLiveData<Int>,val update:
         return R.style.CustomBottomSheetDialog
     }
 
-    override fun onStart() {
-        super.onStart()
-        startValue.observe(viewLifecycleOwner){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.count.observe(viewLifecycleOwner){
             if(it != binding.slider.value.toInt()){
                 binding.slider.value = it.toFloat()
             }
@@ -57,9 +68,10 @@ class BottomSheetCorrectFragment(val startValue:MutableLiveData<Int>,val update:
             dismiss()
         }
         binding.slider.addOnChangeListener { _, value, _ ->
-            update(value.toInt())
+            viewModel.count.value = value.toInt()
         }
     }
+
 
     private fun changeValueSlider(value:Int){
         if ((binding.slider.value.toInt()+value) !in 0..300) return

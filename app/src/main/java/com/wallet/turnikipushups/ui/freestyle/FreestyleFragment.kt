@@ -19,19 +19,13 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
             getAppComponent(requireContext()).mainViewModel()
         }
     }
-
-    val count:MutableLiveData<Int> = MutableLiveData(0)
-
     override fun initView() {
         withBinding {
             PopUps().infoPullUpPopUp(requireActivity())
             editBtn.setOnClickListener {
-                BottomSheetCorrectFragment(count){
-                    if(it != count.value) count.value = it
-                }
-                    .show(requireActivity().supportFragmentManager,"tag")
+                BottomSheetCorrectFragment().show(requireActivity().supportFragmentManager,"tag")
             }
-            count.observe(viewLifecycleOwner){
+            viewModel.count.observe(viewLifecycleOwner){
                 repsValue.text = it.toString()
             }
         }

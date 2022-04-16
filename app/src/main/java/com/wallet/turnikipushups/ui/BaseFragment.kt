@@ -13,15 +13,18 @@ import com.wallet.turnikipushups.App
 import com.wallet.turnikipushups.di.component.AppComponent
 
 abstract class BaseFragment<T : ViewBinding> : Fragment() {
-    var binding: T? = null
+    var _binding: T? = null
+
+    val binding:T
+        get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = bind(inflater)
-        return binding!!.root
+        _binding = bind(inflater)
+        return _binding!!.root
     }
 
 
@@ -42,7 +45,12 @@ abstract class BaseFragment<T : ViewBinding> : Fragment() {
         return (context.applicationContext as App).appComponent
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     inline fun withBinding(block: T.() -> Unit) {
-        block(binding!!)
+        block(binding)
     }
 }

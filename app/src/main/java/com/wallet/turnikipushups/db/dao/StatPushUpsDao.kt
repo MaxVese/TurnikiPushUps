@@ -3,6 +3,7 @@ package com.wallet.turnikipushups.db.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.wallet.turnikipushups.models.StatPushUps
+import kotlinx.coroutines.flow.Flow
 
 
 @Dao
@@ -17,7 +18,7 @@ interface StatPushUpsDao {
     fun delete(vararg statPushUps: StatPushUps)
 
     @Query("SELECT * FROM statPushUps")
-    fun getAll(): List<StatPushUps>
+    fun getAll(): Flow<List<StatPushUps>>
 
     @Query("SELECT COUNT(*) FROM statPushUps WHERE count > 0")
     fun getCountWorkouts():Long
