@@ -84,7 +84,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,7 +111,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,7 +138,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,7 +165,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -192,7 +192,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -219,7 +219,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -246,7 +246,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -273,7 +273,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -307,7 +307,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -334,7 +334,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -361,7 +361,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -388,7 +388,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
             <TextView
                 style="@style/text14px"
@@ -401,7 +401,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
 
             <LinearLayout
@@ -429,7 +429,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
 
             <TextView
@@ -444,7 +444,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginBottom="@dimen/_31sdp"
-                android:background="@color/gray_dark"/>
+                android:background="@color/gray_dark_24"/>
 
         </LinearLayout>
     </ScrollView>
