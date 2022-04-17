@@ -51,9 +51,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/notifySwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 app:thumbTint="@color/thumb_color"
                 app:trackTint="@color/track_color"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -68,6 +68,7 @@
             android:background="@color/gray_dark_24"/>
 
         <TextView
+            android:id="@+id/delayDayValue"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_44sdp"
             android:gravity="center_vertical"
@@ -92,36 +93,12 @@
                 android:text="@string/time"
                 style="@style/text14px"/>
             <TextView
+                android:id="@+id/timeValue"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 style="@style/text10px"
                 android:text="20:00"
-                android:textColor="@color/blue_light"/>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/gray_dark_24"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="@dimen/_44sdp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:text="@string/ringtone"
-                style="@style/text14px"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                style="@style/text10px"
-                android:text="По умолччанию (Bird)"
                 android:textColor="@color/blue_light"/>
         </LinearLayout>
 
@@ -142,6 +119,7 @@
                 android:text="@string/vibr"
                 style="@style/text14px"/>
             <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/vibrSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

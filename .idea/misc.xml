@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.309" />
+        <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/drawable/border_text_background.xml" value="0.338" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/drawable/circle.xml" value="0.338" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/drawable/circle_with_stroke.xml" value="0.338" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/drawable/dialog_bg.xml" value="0.2195" />
@@ -21,10 +22,11 @@
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/font/pt_sans_narrow_bold.xml" value="0.4328125" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/activity_main.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/activity_splash.xml" value="0.40260416666666665" />
+        <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/day_counter_pop_up.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_bottom_sheet_correct.xml" value="0.6" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_bottom_sheet_correctfragment.xml" value="0.40260416666666665" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_freestyle.xml" value="0.4" />
-        <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_main.xml" value="0.6" />
+        <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_main.xml" value="0.264" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_notification.xml" value="0.4" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_settings.xml" value="0.4" />
         <entry key="..\:/Users/MSI/AndroidStudioProjects/TurnikiPushUps/app/src/main/res/layout/fragment_stat_diagram.xml" value="0.40260416666666665" />

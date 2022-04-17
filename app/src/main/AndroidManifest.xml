@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wallet.turnikipushups">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -22,6 +25,9 @@
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"/>
+
+        <receiver
+            android:name=".utils.AlarmReceiver"/>
 
         <meta-data
             android:name="preloaded_fonts"

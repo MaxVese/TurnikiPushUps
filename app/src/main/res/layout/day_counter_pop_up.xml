@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_226sdp"
+        android:layout_height="@dimen/_177sdp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/white"
+        android:layout_margin="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_12sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/text24px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1_365"
+                android:textColor="@color/gray_dark"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/minusBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_minus_square"
+                android:layout_marginStart="@dimen/_26sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/plusBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus_square"
+                android:layout_marginEnd="@dimen/_26sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/counterValue"
+                style="@style/text32px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_text_background"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:text="1"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/plusBtn"
+                app:layout_constraintStart_toEndOf="@+id/minusBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/positiveBtn"
+                style="@style/text16pxBlack"
+                android:textColor="@color/blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_14sdp"
+                android:text="@string/ok"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/negativeBTN"
+                style="@style/text16pxBlack"
+                android:textColor="@color/gray_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_25ssp"
+                android:text="@string/cancel"
+                app:layout_constraintBottom_toBottomOf="@+id/positiveBtn"
+                app:layout_constraintEnd_toStartOf="@+id/positiveBtn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

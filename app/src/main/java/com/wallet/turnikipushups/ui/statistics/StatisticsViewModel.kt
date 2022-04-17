@@ -36,10 +36,12 @@ class StatisticsViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao
                         it.dateWorkout?.atZone(ZoneId.systemDefault())?.toInstant()?.toEpochMilli()!!
                     }?.dateWorkout
                     val listM:MutableList<Pair<Int,Int>> = mutableListOf()
-                    val periodOfMonth = ChronoUnit.MONTHS.between(minStatByDate,maxStatByDate)
-                    for(i in periodOfMonth+1 downTo 0){
-                        val date = minStatByDate?.plusMonths(i)
-                        listM.add(Pair(date!!.year,date.monthValue))
+                    if(minStatByDate != null && maxStatByDate != null) {
+                        val periodOfMonth = ChronoUnit.MONTHS.between(minStatByDate, maxStatByDate)
+                        for (i in periodOfMonth + 1 downTo 0) {
+                            val date = minStatByDate.plusMonths(i)
+                            listM.add(Pair(date!!.year, date.monthValue))
+                        }
                     }
 
                     withContext(Main){
