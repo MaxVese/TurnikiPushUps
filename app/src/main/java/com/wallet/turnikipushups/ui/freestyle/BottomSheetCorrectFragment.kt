@@ -20,9 +20,9 @@ class BottomSheetCorrectFragment() : BottomSheetDialogFragment() {
 
     lateinit var binding:FragmentBottomSheetCorrectBinding
 
-    private val viewModel: MainViewModel by viewModels {
+    private val viewModel: FreestyleViewModel by viewModels {
         ViewModelFactory{
-            (requireContext().applicationContext as App).appComponent.mainViewModel()
+            (requireContext().applicationContext as App).appComponent.freestyleViewModel()
         }
     }
 

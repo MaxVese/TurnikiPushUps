@@ -1,5 +1,6 @@
 package com.wallet.turnikipushups.ui.statistics
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +9,7 @@ import com.wallet.turnikipushups.models.StatPushUps
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.time.ZoneId
@@ -22,6 +24,10 @@ class StatisticsViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao
     val mapStatsPushUps: MutableLiveData<Map<Pair<Int,Int>,List<StatPushUps>>> = MutableLiveData()
     val listMonths: MutableLiveData<List<Pair<Int,Int>>> = MutableLiveData()
 
+    override fun onCleared() {
+        Log.d("mylog","5234")
+        super.onCleared()
+    }
 
     fun getAllStats(){
         viewModelScope.launch(Dispatchers.IO) {
@@ -38,10 +44,15 @@ class StatisticsViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao
                     val listM:MutableList<Pair<Int,Int>> = mutableListOf()
                     if(minStatByDate != null && maxStatByDate != null) {
                         val periodOfMonth = ChronoUnit.MONTHS.between(minStatByDate, maxStatByDate)
-                        for (i in periodOfMonth + 1 downTo 0) {
-                            val date = minStatByDate.plusMonths(i)
-                            listM.add(Pair(date!!.year, date.monthValue))
+                        if(periodOfMonth > 0){
+                            for (i in periodOfMonth + 1 downTo 0) {
+                                val date = minStatByDate.plusMonths(i)
+                                listM.add(Pair(date!!.year, date.monthValue))
+                            }
+                        }else{
+                            listM.add(Pair(minStatByDate.year, minStatByDate.monthValue))
                         }
+
                     }
 
                     withContext(Main){

@@ -55,4 +55,8 @@
     <string name="day">день</string>
     <string name="notification_text">Пора сделать тренировку!</string>
     <string name="Stop">Закончить</string>
+    <string name="home">Домой</string>
+    <string name="workout_is_end">Тренировка закончена</string>
+    <string name="you_did">Вы сделали</string>
+    <string name="reps">Повторений</string>
 </resources>

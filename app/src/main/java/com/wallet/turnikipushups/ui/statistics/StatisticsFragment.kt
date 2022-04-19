@@ -1,6 +1,8 @@
 package com.wallet.turnikipushups.ui.statistics
 
 import android.view.LayoutInflater
+import androidx.core.view.isInvisible
+import androidx.core.view.size
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.wallet.turnikipushups.databinding.StatisticsFragmentBinding
@@ -33,6 +35,8 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
             binding?.viewPager?.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
+                    if(position == 0) binding?.arrowLeft?.isInvisible = true
+                    if(position+1 == binding?.viewPager?.size) binding?.arrowRight?.isInvisible = true
                     binding?.monthText?.text = getDateFormat(it[position])
                 }
             })

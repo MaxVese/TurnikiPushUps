@@ -8,7 +8,9 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.core.content.res.ResourcesCompat
+import com.wallet.turnikipushups.R
 import com.wallet.turnikipushups.databinding.DayCounterPopUpBinding
+import com.wallet.turnikipushups.databinding.FinishFreestylePopUpBinding
 import com.wallet.turnikipushups.databinding.InfoPullUpPopupBinding
 import com.wallet.turnikipushups.databinding.TestPullupPopupBinding
 import java.util.*
@@ -71,6 +73,28 @@ class PopUps {
             dayCount(count)
             window.dismiss()
         }
+        window.contentView = customLayout.root
+        window.showAtLocation(
+            context.findViewById<View>(android.R.id.content).rootView,
+            Gravity.CENTER,
+            0,
+            -100
+        )
+    }
+
+    inline fun finishFreestylePopUp(context: Activity, count:Int, crossinline finish:() -> Unit) {
+        val customLayout: FinishFreestylePopUpBinding =
+            FinishFreestylePopUpBinding.inflate(LayoutInflater.from(context))
+        val width = LinearLayout.LayoutParams.MATCH_PARENT
+        val height = LinearLayout.LayoutParams.MATCH_PARENT
+        val window = PopupWindow(customLayout.root, width, height, true)
+        window.isOutsideTouchable = false
+        customLayout.textView4.text = context.getString(R.string.you_did) + " " + count.toString() + " " + context.getString(R.string.reps)
+        customLayout.dismissBtn.setOnClickListener {
+            window.dismiss()
+            finish()
+        }
+
         window.contentView = customLayout.root
         window.showAtLocation(
             context.findViewById<View>(android.R.id.content).rootView,

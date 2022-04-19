@@ -23,24 +23,36 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
     val r = MainFragmentReceiver()
 
 
-    private val viewModel: MainViewModel by viewModels {
+    private val viewModel: FreestyleViewModel by viewModels {
         ViewModelFactory{
-            getAppComponent(requireContext()).mainViewModel()
+            getAppComponent(requireContext()).freestyleViewModel()
         }
     }
     override fun initView() {
         r.register()
         withBinding {
             PopUps().infoPullUpPopUp(requireActivity())
-            editBtn.setOnClickListener {
-                BottomSheetCorrectFragment().show(requireActivity().supportFragmentManager,"tag")
+            viewModel.isFinish.observe(viewLifecycleOwner){
+                if(it){
+                    PopUps().finishFreestylePopUp(requireActivity(),viewModel.count.value?:0){
+                        findNavController().popBackStack()
+                    }
+                }
             }
             viewModel.count.observe(viewLifecycleOwner){
                 repsValue.text = it.toString()
             }
+            editBtn.setOnClickListener {
+                BottomSheetCorrectFragment().show(requireActivity().supportFragmentManager,"tag")
+            }
             startBtn.setOnClickListener {
-                startBtn.text = getString(R.string.Stop)
-                requireContext().startService(Intent(requireContext(),CounterPullUpsService::class.java))
+                if (viewModel.isServiceStart){
+                    viewModel.saveWorkout()
+                }else{
+                    viewModel.isServiceStart = true
+                    startBtn.text = getString(R.string.Stop)
+                    requireContext().startService(Intent(requireContext(),CounterPullUpsService::class.java))
+                }
             }
             homeBtn.setOnClickListener {
                 findNavController().popBackStack()
@@ -69,6 +81,8 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
     override fun onDestroyView() {
         requireContext().stopService(Intent(requireContext(),CounterPullUpsService::class.java))
         r.unregister()
+        viewModel.count.value = 0
+        viewModel.isFinish.value = false
         super.onDestroyView()
     }
 

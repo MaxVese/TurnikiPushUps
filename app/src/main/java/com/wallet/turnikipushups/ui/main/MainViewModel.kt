@@ -16,17 +16,15 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao)
     : ViewModel() {
 
-    val count:MutableLiveData<Int> = MutableLiveData(0)
-
     val statsPushUps: MutableLiveData<List<StatPushUps>> = MutableLiveData()
 
     fun getAllStats(){
-        viewModelScope.launch(IO) {
+        viewModelScope.launch {
             statPushUpsDao
                 .getAll()
                 .collect {
                     withContext(Dispatchers.Main){
-                        statsPushUps.value =it
+                        statsPushUps.value = it
                     }
                 }
         }
