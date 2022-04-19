@@ -16,7 +16,6 @@ class ViewModelModule {
     @Provides
     fun provideMainViewModel(statPushUpsDao: StatPushUpsDao): MainViewModel = MainViewModel(statPushUpsDao)
 
-    @Singleton
     @Provides
     fun provideStatisticsViewModel(statPushUpsDao: StatPushUpsDao): StatisticsViewModel = StatisticsViewModel(statPushUpsDao)
 

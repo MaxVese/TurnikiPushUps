@@ -16,21 +16,14 @@ import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.models.StatPushUps
 import com.wallet.turnikipushups.ui.BaseFragment
 
-class StatDiagramFragment(val pair:Pair<Int,Int>) : BaseFragment<FragmentStatDiagramBinding>() {
+class StatDiagramFragment(val list: List<StatPushUps>?) : BaseFragment<FragmentStatDiagramBinding>() {
     override fun bind(inflater: LayoutInflater): FragmentStatDiagramBinding {
         return FragmentStatDiagramBinding.inflate(inflater)
     }
 
-    private val viewModel: StatisticsViewModel by viewModels {
-        ViewModelFactory{
-            getAppComponent(requireContext()).statisticsViewModel()
-        }
-    }
 
     override fun initView() {
         setChartSettings()
-        val list = viewModel.mapStatsPushUps.value
-            ?.getOrDefault(pair,null)
 
         for(i in 1..31){
             setData(Pair(i,list?.filter { it.dateWorkout?.dayOfMonth == i }?.sumOf { it.count } ?: 0))
@@ -77,9 +70,9 @@ class StatDiagramFragment(val pair:Pair<Int,Int>) : BaseFragment<FragmentStatDia
             chart.setTouchEnabled(false)
             chart.legend.form = Legend.LegendForm.NONE
             chart.axisRight.setDrawLabels(false)
-                ResourcesCompat.getFont(requireActivity(), R.font.inter_medium)
             chart.axisRight.setDrawAxisLine(false)
             chart.axisRight.setDrawGridLines(false)
+            chart.xAxis.typeface = ResourcesCompat.getFont(requireActivity(), R.font.inter_medium)
             chart.xAxis.position = XAxis.XAxisPosition.BOTTOM
             chart.xAxis.setDrawGridLines(false)
             chart.xAxis.textColor = resources.getColor(R.color.white,null)
@@ -90,8 +83,7 @@ class StatDiagramFragment(val pair:Pair<Int,Int>) : BaseFragment<FragmentStatDia
             chart.axisLeft.setGridDashedLine(DashPathEffect(FloatArray(2){ 30f },0f))
             chart.axisLeft.gridLineWidth = 1f
             chart.axisLeft.textColor = resources.getColor(R.color.yellow,null)
-            chart.axisLeft.typeface =
-                ResourcesCompat.getFont(requireActivity(), R.font.inter_medium)
+            chart.axisLeft.typeface = ResourcesCompat.getFont(requireActivity(), R.font.inter_medium)
             chart.axisLeft.xOffset = 20f
             chart.axisLeft.setDrawAxisLine(false)
             chart.axisLeft.axisMinimum = 0f

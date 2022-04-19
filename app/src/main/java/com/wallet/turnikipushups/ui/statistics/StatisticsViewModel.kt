@@ -20,7 +20,6 @@ import javax.inject.Inject
 class StatisticsViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao)
     : ViewModel() {
 
-    val statsPushUps: MutableLiveData<List<StatPushUps>> = MutableLiveData()
     val mapStatsPushUps: MutableLiveData<Map<Pair<Int,Int>,List<StatPushUps>>> = MutableLiveData()
     val listMonths: MutableLiveData<List<Pair<Int,Int>>> = MutableLiveData()
 
@@ -44,20 +43,16 @@ class StatisticsViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao
                     val listM:MutableList<Pair<Int,Int>> = mutableListOf()
                     if(minStatByDate != null && maxStatByDate != null) {
                         val periodOfMonth = ChronoUnit.MONTHS.between(minStatByDate, maxStatByDate)
-                        if(periodOfMonth > 0){
                             for (i in periodOfMonth + 1 downTo 0) {
-                                val date = minStatByDate.plusMonths(i)
+                                val date = maxStatByDate.minusMonths(i)
                                 listM.add(Pair(date!!.year, date.monthValue))
                             }
-                        }else{
-                            listM.add(Pair(minStatByDate.year, minStatByDate.monthValue))
-                        }
-
+                        listM.reverse()
                     }
 
                     withContext(Main){
-                        statsPushUps.value =it
                         listMonths.value = listM
+                        mapStatsPushUps.value = it.groupBy { Pair(it.dateWorkout?.year!!,it.dateWorkout?.monthValue!!) }
                     }
                 }
         }

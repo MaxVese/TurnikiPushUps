@@ -2,6 +2,7 @@ package com.wallet.turnikipushups.ui.statistics
 
 import android.view.LayoutInflater
 import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.core.view.size
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
@@ -22,27 +23,36 @@ class StatisticsFragment : BaseFragment<StatisticsFragmentBinding>() {
     }
 
 
+
     override fun initView() {
         viewModel.getAllStats()
 
         viewModel.listMonths.observe(viewLifecycleOwner){
-            val staticsPagerAdapter = StatisticsPagerAdapter(
-                parentFragmentManager,
-                lifecycle,
-                it
-            )
-            binding?.viewPager?.adapter = staticsPagerAdapter
             binding?.viewPager?.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
-                    if(position == 0) binding?.arrowLeft?.isInvisible = true
-                    if(position+1 == binding?.viewPager?.size) binding?.arrowRight?.isInvisible = true
+                    if(position == 0) {
+                        binding?.arrowRight?.isInvisible = true
+                    }else {
+                        binding?.arrowRight?.isVisible = true
+                    }
+                    if(position+1 == binding?.viewPager?.adapter?.itemCount) {
+                        binding?.arrowLeft?.isInvisible = true
+                    }else{
+                        binding?.arrowLeft?.isVisible = true
+                    }
                     binding?.monthText?.text = getDateFormat(it[position])
                 }
             })
         }
-        viewModel.statsPushUps.observe(viewLifecycleOwner){
-            viewModel.mapStatsPushUps.value = it.groupBy { Pair(it.dateWorkout?.year!!,it.dateWorkout?.monthValue!!) }
+        viewModel.mapStatsPushUps.observe(viewLifecycleOwner){
+            val staticsPagerAdapter = StatisticsPagerAdapter(
+                parentFragmentManager,
+                lifecycle,
+                viewModel.listMonths.value!!,
+                it,
+            )
+            binding?.viewPager?.adapter = staticsPagerAdapter
         }
         withBinding {
             arrowLeft.setOnClickListener {
