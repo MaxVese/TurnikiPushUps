@@ -2,6 +2,7 @@ package com.wallet.turnikipushups.di.modules
 
 import com.wallet.turnikipushups.db.AppSharedPreferense
 import com.wallet.turnikipushups.db.dao.StatPushUpsDao
+import com.wallet.turnikipushups.db.dao.WorkoutDao
 import com.wallet.turnikipushups.ui.freestyle.FreestyleViewModel
 import com.wallet.turnikipushups.ui.main.MainViewModel
 import com.wallet.turnikipushups.ui.notification.NotificationViewModel
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 class ViewModelModule {
 
     @Provides
-    fun provideMainViewModel(statPushUpsDao: StatPushUpsDao): MainViewModel = MainViewModel(statPushUpsDao)
+    fun provideMainViewModel(statPushUpsDao: StatPushUpsDao,workoutDao: WorkoutDao): MainViewModel = MainViewModel(statPushUpsDao,workoutDao)
 
     @Provides
     fun provideStatisticsViewModel(statPushUpsDao: StatPushUpsDao): StatisticsViewModel = StatisticsViewModel(statPushUpsDao)

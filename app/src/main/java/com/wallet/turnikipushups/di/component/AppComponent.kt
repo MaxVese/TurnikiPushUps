@@ -2,6 +2,7 @@ package com.wallet.turnikipushups.di.component
 
 import android.app.Application
 import com.wallet.turnikipushups.activities.MainActivity
+import com.wallet.turnikipushups.activities.StartActivity
 import com.wallet.turnikipushups.db.dao.StatPushUpsDao
 import com.wallet.turnikipushups.di.modules.DBModule
 import com.wallet.turnikipushups.di.modules.ViewModelModule
@@ -26,7 +27,7 @@ interface AppComponent {
         fun build(): AppComponent
     }
 
-    fun inject(mainActivity: MainActivity)
+    fun inject(startActivity: StartActivity)
 
     fun mainViewModel(): MainViewModel
 
