@@ -43,6 +43,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             statistics.setOnClickListener {
                 findNavController().navigate(R.id.action_mainFragment_to_statisticsFragment)
             }
+            trainBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_mainFragment_to_startWorkoutFragment)
+            }
         }
     }
 

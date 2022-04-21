@@ -17,4 +17,5 @@
     <color name="blue_light">#5CF1F4F7</color>
     <color name="gray_dark_24">#3D7F7F7F</color>
     <color name="gray_dark">#7F7F7F</color>
+    <color name="pop_up_back">#F1F4F7</color>
 </resources>

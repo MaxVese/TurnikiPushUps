@@ -22,12 +22,19 @@
         <action
             android:id="@+id/action_mainFragment_to_statisticsFragment"
             app:destination="@id/statisticsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_startWorkoutFragment"
+            app:destination="@id/startWorkoutFragment" />
     </fragment>
     <fragment
         android:id="@+id/freestyleFragment"
         android:name="com.wallet.turnikipushups.ui.freestyle.FreestyleFragment"
         android:label="fragment_freestyle"
-        tools:layout="@layout/fragment_freestyle" />
+        tools:layout="@layout/fragment_freestyle" >
+        <action
+            android:id="@+id/action_freestyleFragment_to_lvlStartFragment"
+            app:destination="@id/lvlStartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.wallet.turnikipushups.ui.notification.NotificationFragment"
@@ -43,4 +50,46 @@
         android:name="com.wallet.turnikipushups.ui.statistics.StatisticsFragment"
         android:label="statistics_fragment"
         tools:layout="@layout/statistics_fragment" />
+    <fragment
+        android:id="@+id/startWorkoutFragment"
+        android:name="com.wallet.turnikipushups.ui.workout.StartWorkoutFragment"
+        android:label="fragment_start_workout"
+        tools:layout="@layout/fragment_start_workout" >
+        <action
+            android:id="@+id/action_startWorkoutFragment_to_lvlStartFragment"
+            app:destination="@id/lvlStartFragment"
+            app:popUpTo="@id/mainFragment"/>
+        <action
+            android:id="@+id/action_startWorkoutFragment_to_freestyleFragment"
+            app:destination="@id/freestyleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lvlStartFragment"
+        android:name="com.wallet.turnikipushups.ui.workout.LvlStartFragment"
+        android:label="fragment_lvl_start"
+        tools:layout="@layout/fragment_lvl_start" >
+        <action
+            android:id="@+id/action_lvlStartFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment"
+            app:popUpTo="@id/mainFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/workoutFragment"
+        android:name="com.wallet.turnikipushups.ui.workout.WorkoutFragment"
+        android:label="workout_fragment"
+        tools:layout="@layout/workout_fragment" >
+        <action
+            android:id="@+id/action_workoutFragment_to_finalWorkoutFragment"
+            app:destination="@id/finalWorkoutFragment"
+            app:popUpTo="@id/mainFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/finalWorkoutFragment"
+        android:name="com.wallet.turnikipushups.ui.workout.FinalWorkoutFragment"
+        android:label="fragment_finall_workout"
+        tools:layout="@layout/fragment_finall_workout" >
+        <action
+            android:id="@+id/action_finalWorkoutFragment_to_startWorkoutFragment"
+            app:destination="@id/startWorkoutFragment" />
+    </fragment>
 </navigation>

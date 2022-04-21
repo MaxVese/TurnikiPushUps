@@ -11,17 +11,32 @@ import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import javax.inject.Inject
 
-class FreestyleViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao,appSharedPreferense: AppSharedPreferense)
+class FreestyleViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao,val appSharedPreferense: AppSharedPreferense)
     : ViewModel() {
 
     val count: MutableLiveData<Int> = MutableLiveData(0)
     val isFinish: MutableLiveData<Boolean> = MutableLiveData(false)
     var isServiceStart: Boolean = false
 
-    fun saveWorkout(){
+    fun saveWorkout(isTest:Boolean){
+        if(isTest){
+            appSharedPreferense.setLvlTrain(getLvlByReps(count.value?:1))
+        }
         val statPushUps = StatPushUps(count = count.value?:0, dateWorkout = LocalDateTime.now())
         statPushUpsDao
             .insert(statPushUps)
         isFinish.value = true
+    }
+
+
+    fun getLvlByReps(count:Int):Int{
+        return when (count){
+            in 0..2 -> 1
+            in 2..4 -> 3
+            in 5..6 -> 7
+            in 6..8 -> 9
+            in 8..10 -> 11
+            else -> 16
+        }
     }
 }

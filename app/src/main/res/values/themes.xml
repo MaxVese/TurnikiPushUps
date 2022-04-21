@@ -51,6 +51,10 @@
         <item name="android:textSize">@dimen/_8ssp</item>
     </style>
 
+    <style name="text12px" parent="baseText">
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
     <style name="text14px" parent="baseText">
         <item name="android:textSize">@dimen/_12ssp</item>
     </style>

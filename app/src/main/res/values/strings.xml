@@ -2,7 +2,6 @@
     <string name="app_name">TurnikiPushUps</string>
     <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ,\nТРЕНУЙСЯ!</string>
     <string name="best">Лучший</string>
-    <string name="total">Всего</string>
     <string name="average">Среднее</string>
     <string name="workout">Тренировка</string>
     <string name="freestyle">Фристайл</string>
@@ -59,4 +58,19 @@
     <string name="workout_is_end">Тренировка закончена</string>
     <string name="you_did">Вы сделали</string>
     <string name="reps">Повторений</string>
+    <string name="progress_in_this_lvl">Прогресс на текущем уровне</string>
+    <string name="set_today">Подходы на сегодня</string>
+    <string name="total">Всего</string>
+    <string name="begin">Начать</string>
+    <string name="choose_lvl">Выбрать уровень</string>
+    <string name="level">Уровень</string>
+    <string name="pull_up_1">подтягивание</string>
+    <string name="pull_up_2_4">подтягивания</string>
+    <string name="pull_up_5">подтягиваний</string>
+    <string name="do_text">Выполните</string>
+    <string name="relax">Отдохните</string>
+    <string name="final_workout_string">Приложение  корректирует вашу программу тренировок как настоящий персональный тренер.\n\n<font color="#4575ED">Легко.</font> (Перейди на следущий уровень)\n<font color="#4575ED">Как раз.</font> (Будьте в курсе   уровня)\n<font color="#4575ED">Тяжело.</font> (Вернуться  к легкому уровню)</string>
+    <string name="easy">Легко</string>
+    <string name="right">Как раз</string>
+    <string name="hard">Тяжело</string>
 </resources>

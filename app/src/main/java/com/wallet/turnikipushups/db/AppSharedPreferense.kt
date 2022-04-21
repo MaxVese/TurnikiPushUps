@@ -12,6 +12,7 @@ class AppSharedPreferense {
     private val DAY_DELAY = "dayDelay"
     private val VIBR_ENABLED = "vibrationEnabled"
     private val NOTIF_ENABLED = "notifEnabled"
+    private val Lvl_Of_Train = "lvl_of_train"
     private val mLock = Any()
     private var sp: SharedPreferences? = null
 
@@ -76,6 +77,14 @@ class AppSharedPreferense {
 
     fun setDayDelay(delay: Int) {
         sp!!.edit().putInt(DAY_DELAY,delay).apply()
+    }
+
+    fun getLvlTrain(): Int {
+        return sp!!.getInt(Lvl_Of_Train,0)
+    }
+
+    fun setLvlTrain(lvl: Int) {
+        sp!!.edit().putInt(Lvl_Of_Train,lvl).apply()
     }
 
     fun isVibrEnabled(): Boolean {

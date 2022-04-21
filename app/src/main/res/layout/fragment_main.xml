@@ -132,7 +132,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logoWithMan" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/trainBtn"
         style="@style/text20px"
         android:layout_width="0dp"
         android:layout_height="@dimen/_44sdp"
@@ -167,7 +167,7 @@
         app:layout_constraintEnd_toStartOf="@+id/statistics"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton"
+        app:layout_constraintTop_toBottomOf="@+id/trainBtn"
         app:strokeColor="@color/blue" />
 
     <com.google.android.material.button.MaterialButton
@@ -189,7 +189,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/freestyle"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton"
+        app:layout_constraintTop_toBottomOf="@+id/trainBtn"
         app:strokeColor="@color/blue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

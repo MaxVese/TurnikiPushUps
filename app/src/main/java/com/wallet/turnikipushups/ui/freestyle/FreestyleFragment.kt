@@ -29,13 +29,18 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
         }
     }
     override fun initView() {
+        val isTest = arguments?.getBoolean("is_test",false)?:false
         r.register()
         withBinding {
             PopUps().infoPullUpPopUp(requireActivity())
             viewModel.isFinish.observe(viewLifecycleOwner){
                 if(it){
-                    PopUps().finishFreestylePopUp(requireActivity(),viewModel.count.value?:0){
-                        findNavController().popBackStack()
+                    if(isTest){
+                        findNavController().navigate(R.id.action_freestyleFragment_to_lvlStartFragment)
+                    }else{
+                        PopUps().finishFreestylePopUp(requireActivity(),viewModel.count.value?:0){
+                            findNavController().popBackStack()
+                        }
                     }
                 }
             }
@@ -47,7 +52,7 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
             }
             startBtn.setOnClickListener {
                 if (viewModel.isServiceStart){
-                    viewModel.saveWorkout()
+                    viewModel.saveWorkout(isTest)
                 }else{
                     viewModel.isServiceStart = true
                     startBtn.text = getString(R.string.Stop)
@@ -83,6 +88,7 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
         r.unregister()
         viewModel.count.value = 0
         viewModel.isFinish.value = false
+        viewModel.isServiceStart = false
         super.onDestroyView()
     }
 
