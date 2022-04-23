@@ -22,6 +22,7 @@ class WorkoutViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao, v
     val countReps:MutableLiveData<Pair<Int,Boolean>> = MutableLiveData()
     val currentSet:MutableLiveData<Int> = MutableLiveData()
     val isFinish: MutableLiveData<Boolean> = MutableLiveData(false)
+    var isVolumeEnable:MutableLiveData<Boolean> = MutableLiveData(sharedPref.isVolumeEnabled())
 
     fun getWorkout(id:Int){
         viewModelScope.launch {
@@ -34,10 +35,26 @@ class WorkoutViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao, v
     }
 
 
+    fun nextSet(){
+        currentSet.value = currentSet.value?.plus(1)
+        currentSet.value?.let {it ->
+            if(workout.value?.listReps?.size?:0 > it){
+                countReps.value =
+                    Pair(workout.value!!.listReps[it],false)
+            }
+        }
+    }
+
+
     fun saveWorkout(){
         val statPushUps = StatPushUps(count = workout.value?.listReps?.reduce { acc, i -> acc+i }?:0, dateWorkout = LocalDateTime.now())
         statPushUpsDao
             .insert(statPushUps)
         isFinish.value = true
+    }
+
+    fun changeVolume(){
+        sharedPref.setVolumeEnabled(!sharedPref.isVolumeEnabled())
+        isVolumeEnable.value = sharedPref.isVolumeEnabled()
     }
 }

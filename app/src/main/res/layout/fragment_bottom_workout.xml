@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.workout.BottomWorkoutFragment">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/nextSetBtn"
+        style="@style/text20px"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_58sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_43sdp"
+        android:backgroundTint="@color/red"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/next_set"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_32sdp"
+        app:layout_constraintBottom_toTopOf="@+id/independentlyBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/independentlyBtn"
+        style="@style/text20px"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_58sdp"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:backgroundTint="@color/red"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/independently"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_32sdp"
+        app:layout_constraintBottom_toTopOf="@+id/exitBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/exitBtn"
+        style="@style/text20px"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_44sdp"
+        android:layout_marginHorizontal="@dimen/_58sdp"
+        android:layout_marginBottom="@dimen/_45sdp"
+        android:backgroundTint="@android:color/transparent"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/exit"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        app:cornerRadius="@dimen/_32sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/blue"
+        app:strokeWidth="@dimen/_1sdp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

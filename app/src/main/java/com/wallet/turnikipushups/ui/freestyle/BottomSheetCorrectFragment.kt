@@ -52,17 +52,17 @@ class BottomSheetCorrectFragment() : BottomSheetDialogFragment() {
         binding.plusBtn.setOnClickListener {
             changeValueSlider(+1)
         }
-        binding.textMinus10.setOnClickListener {
-            changeValueSlider(-10)
+        binding.textMinus1.setOnClickListener {
+            changeValueSlider(-1)
         }
-        binding.textPlus10.setOnClickListener {
-            changeValueSlider(+10)
+        binding.textPlus1.setOnClickListener {
+            changeValueSlider(+1)
         }
-        binding.textMinus50.setOnClickListener {
-            changeValueSlider(-50)
+        binding.textMinus5.setOnClickListener {
+            changeValueSlider(-5)
         }
-        binding.textPlus50.setOnClickListener {
-            changeValueSlider(+50)
+        binding.textPlus5.setOnClickListener {
+            changeValueSlider(+5)
         }
         binding.finishBtn.setOnClickListener {
             dismiss()
@@ -74,7 +74,7 @@ class BottomSheetCorrectFragment() : BottomSheetDialogFragment() {
 
 
     private fun changeValueSlider(value:Int){
-        if ((binding.slider.value.toInt()+value) !in 0..300) return
+        if ((binding.slider.value.toInt()+value) !in 0..20) return
         binding.slider.value = binding.slider.value + value
     }
 

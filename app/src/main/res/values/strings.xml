@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TurnikiPushUps</string>
+    <string name="app_name" translatable="false">Турніки.укр</string>
     <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ,\nТРЕНУЙСЯ!</string>
     <string name="best">Лучший</string>
     <string name="average">Среднее</string>
@@ -43,7 +43,7 @@
     <string name="Leave_feedback_by_email">Оставить отзыв по ел. почте</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="tyrnik_ukr_version">Турники.укр версия</string>
-    <string name="_2_154_34_version">Версия 2.154.34 Авторское право</string>
+    <string name="_2_154_34_version">Версия 1.0 Авторское право</string>
     <string name="reminds_you_to_drink_water">Напоминает вам пить воду</string>
     <string name="test_pullup_text">Сделайте как можно больше подтягиваний без остановки. Ваша программа тренировки будет построена по результатам этого теста</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -73,4 +73,11 @@
     <string name="easy">Легко</string>
     <string name="right">Как раз</string>
     <string name="hard">Тяжело</string>
+    <string name="beginer">Новичёк</string>
+    <string name="medium">Любитель</string>
+    <string name="pro">Профессионал</string>
+    <string name="next_set">Полный</string>
+    <string name="independently">Самостоятельно</string>
+    <string name="exit">Выйти</string>
+    <string name="notify">Notification</string>
 </resources>

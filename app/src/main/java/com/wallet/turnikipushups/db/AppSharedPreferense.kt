@@ -11,8 +11,10 @@ class AppSharedPreferense {
     private val TIME_NOTIFY = "timeNotify"
     private val DAY_DELAY = "dayDelay"
     private val VIBR_ENABLED = "vibrationEnabled"
+    private val VOLUME_ENABLED = "volumeEnabled"
     private val NOTIF_ENABLED = "notifEnabled"
     private val Lvl_Of_Train = "lvl_of_train"
+    private val USER_LANGUAGE = "USER_LANGUAGE"
     private val mLock = Any()
     private var sp: SharedPreferences? = null
 
@@ -95,12 +97,28 @@ class AppSharedPreferense {
         sp!!.edit().putBoolean(VIBR_ENABLED,isEnable).apply()
     }
 
+    fun isVolumeEnabled(): Boolean {
+        return sp!!.getBoolean(VOLUME_ENABLED,true)
+    }
+
+    fun setVolumeEnabled(isEnable:Boolean) {
+        sp!!.edit().putBoolean(VOLUME_ENABLED,isEnable).apply()
+    }
+
     fun isNotifEnabled(): Boolean {
         return sp!!.getBoolean(NOTIF_ENABLED,false)
     }
 
     fun setNotifEnabled(isEnable:Boolean) {
         sp!!.edit().putBoolean(NOTIF_ENABLED,isEnable).apply()
+    }
+
+    fun getUserLanguage(): String? {
+        return sp!!.getString(USER_LANGUAGE,"")
+    }
+
+    fun setUserLanguage(value:String) {
+        sp!!.edit().putString(USER_LANGUAGE,value).apply()
     }
 
 }

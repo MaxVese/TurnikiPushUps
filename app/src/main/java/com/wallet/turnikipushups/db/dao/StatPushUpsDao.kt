@@ -17,6 +17,10 @@ interface StatPushUpsDao {
     @Delete
     fun delete(vararg statPushUps: StatPushUps)
 
+    @Query("DELETE FROM statPushUps")
+    fun deleteAll()
+
+
     @Query("SELECT * FROM statPushUps")
     fun getAll(): Flow<List<StatPushUps>>
 

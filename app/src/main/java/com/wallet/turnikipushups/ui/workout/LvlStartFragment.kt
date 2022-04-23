@@ -60,6 +60,7 @@ class LvlStartFragment : BaseFragment<FragmentLvlStartBinding>() {
                         gravity = Gravity.CENTER
                     })
             }
+            binding?.constraintLayout?.removeAllViews()
             textViews.forEachIndexed { index, textView ->
                 textView.layoutParams = ConstraintLayout.LayoutParams(
                     resources.getDimension(com.intuit.sdp.R.dimen._32sdp).toInt(),
@@ -90,6 +91,9 @@ class LvlStartFragment : BaseFragment<FragmentLvlStartBinding>() {
             }
             homeBtn.setOnClickListener {
                 findNavController().popBackStack()
+            }
+            chooseLvlBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_lvlStartFragment_to_chooseLevelFragment)
             }
         }
     }

@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_12sdp"
         android:valueFrom="0"
-        android:valueTo="300"
+        android:valueTo="20"
         android:stepSize="1"
         app:tickVisible="false"
         app:layout_constraintBottom_toBottomOf="@+id/minusBtn"
@@ -48,7 +48,7 @@
         app:trackHeight="@dimen/_6sdp" />
 
     <TextView
-        android:id="@+id/text_minus10"
+        android:id="@+id/text_minus1"
         style="@style/text24px"
         android:layout_width="@dimen/_67sdp"
         android:layout_height="wrap_content"
@@ -56,14 +56,14 @@
         android:background="@drawable/rounded_background_text"
         android:gravity="center"
         android:paddingVertical="@dimen/_5sdp"
-        android:text="-10"
-        app:layout_constraintEnd_toStartOf="@+id/text_plus10"
+        android:text="-1"
+        app:layout_constraintEnd_toStartOf="@+id/text_plus1"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@+id/slider"
         app:layout_constraintTop_toBottomOf="@+id/slider" />
 
     <TextView
-        android:id="@+id/text_plus10"
+        android:id="@+id/text_plus1"
         style="@style/text24px"
         android:layout_width="@dimen/_67sdp"
         android:layout_height="wrap_content"
@@ -71,13 +71,13 @@
         android:background="@drawable/rounded_background_text"
         android:gravity="center"
         android:paddingVertical="@dimen/_5sdp"
-        android:text="+10"
+        android:text="+1"
         app:layout_constraintEnd_toEndOf="@+id/slider"
-        app:layout_constraintStart_toEndOf="@id/text_minus10"
+        app:layout_constraintStart_toEndOf="@id/text_minus1"
         app:layout_constraintTop_toBottomOf="@+id/slider" />
 
     <TextView
-        android:id="@+id/text_minus50"
+        android:id="@+id/text_minus5"
         style="@style/text24px"
         android:layout_width="@dimen/_67sdp"
         android:layout_height="wrap_content"
@@ -85,14 +85,14 @@
         android:background="@drawable/rounded_background_text"
         android:gravity="center"
         android:paddingVertical="@dimen/_5sdp"
-        android:text="-50"
-        app:layout_constraintEnd_toStartOf="@+id/text_plus50"
+        android:text="-5"
+        app:layout_constraintEnd_toStartOf="@+id/text_plus5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="@+id/slider"
-        app:layout_constraintTop_toBottomOf="@+id/text_minus10" />
+        app:layout_constraintTop_toBottomOf="@+id/text_minus1" />
 
     <TextView
-        android:id="@+id/text_plus50"
+        android:id="@+id/text_plus5"
         style="@style/text24px"
         android:layout_width="@dimen/_67sdp"
         android:layout_height="wrap_content"
@@ -100,10 +100,10 @@
         android:background="@drawable/rounded_background_text"
         android:gravity="center"
         android:paddingVertical="@dimen/_5sdp"
-        android:text="+50"
+        android:text="+5"
         app:layout_constraintEnd_toEndOf="@+id/slider"
-        app:layout_constraintStart_toEndOf="@id/text_minus50"
-        app:layout_constraintTop_toBottomOf="@+id/text_plus10" />
+        app:layout_constraintStart_toEndOf="@id/text_minus5"
+        app:layout_constraintTop_toBottomOf="@+id/text_plus1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/finishBtn"
@@ -122,7 +122,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_minus50" />
+        app:layout_constraintTop_toBottomOf="@+id/text_minus5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

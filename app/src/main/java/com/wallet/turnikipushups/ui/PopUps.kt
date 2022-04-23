@@ -2,6 +2,7 @@ package com.wallet.turnikipushups.ui
 
 import android.app.Activity
 import android.app.TimePickerDialog
+import android.content.res.Resources
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +10,7 @@ import android.widget.LinearLayout
 import android.widget.PopupWindow
 import androidx.core.content.res.ResourcesCompat
 import com.wallet.turnikipushups.R
-import com.wallet.turnikipushups.databinding.DayCounterPopUpBinding
-import com.wallet.turnikipushups.databinding.FinishFreestylePopUpBinding
-import com.wallet.turnikipushups.databinding.InfoPullUpPopupBinding
-import com.wallet.turnikipushups.databinding.TestPullupPopupBinding
+import com.wallet.turnikipushups.databinding.*
 import java.util.*
 
 class PopUps {
@@ -122,5 +120,48 @@ class PopUps {
         timePicker.window?.setBackgroundDrawable(
             ResourcesCompat.getDrawable(context.resources,
                 com.wallet.turnikipushups.R.drawable.dialog_bg,null))
+    }
+
+    fun languagePicker(context: Activity,update:(String)->Unit){
+        val customLayout: LanguagePopUpBinding =
+            LanguagePopUpBinding.inflate(LayoutInflater.from(context))
+        val width = LinearLayout.LayoutParams.MATCH_PARENT
+        val height = LinearLayout.LayoutParams.MATCH_PARENT
+        val window = PopupWindow(customLayout.root, width, height, true)
+        window.isOutsideTouchable = false
+        val langs = arrayOf(
+            Locale.forLanguageTag("ru-RU"),
+            Locale.forLanguageTag("uk-UK")
+        )
+        customLayout.russian.text = langs[0].displayLanguage
+        customLayout.ukraine.text = langs[1].displayLanguage
+        customLayout.russian.setOnClickListener {
+            val res: Resources = context.resources
+            val dm = res.displayMetrics
+            val conf = res.configuration
+            conf.setLocale(langs[0])
+            Locale.setDefault(langs[0])
+            res.updateConfiguration(conf, dm)
+            update(langs[0].toLanguageTag())
+            window.dismiss()
+        }
+        customLayout.ukraine.setOnClickListener {
+            val res: Resources = context.resources
+            val dm = res.displayMetrics
+            val conf = res.configuration
+            conf.setLocale(langs[1])
+            Locale.setDefault(langs[1])
+            res.updateConfiguration(conf, dm)
+            update(langs[1].toLanguageTag())
+            window.dismiss()
+        }
+
+        window.contentView = customLayout.root
+        window.showAtLocation(
+            context.findViewById<View>(android.R.id.content).rootView,
+            Gravity.CENTER,
+            0,
+            -100
+        )
     }
 }

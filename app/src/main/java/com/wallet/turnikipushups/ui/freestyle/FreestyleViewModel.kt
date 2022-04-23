@@ -17,6 +17,7 @@ class FreestyleViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao,
     val count: MutableLiveData<Int> = MutableLiveData(0)
     val isFinish: MutableLiveData<Boolean> = MutableLiveData(false)
     var isServiceStart: Boolean = false
+    var isVolumeEnable:MutableLiveData<Boolean> = MutableLiveData(appSharedPreferense.isVolumeEnabled())
 
     fun saveWorkout(isTest:Boolean){
         if(isTest){
@@ -38,5 +39,10 @@ class FreestyleViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao,
             in 8..10 -> 11
             else -> 16
         }
+    }
+
+    fun changeVolume(){
+        appSharedPreferense.setVolumeEnabled(!appSharedPreferense.isVolumeEnabled())
+        isVolumeEnable.value = appSharedPreferense.isVolumeEnabled()
     }
 }

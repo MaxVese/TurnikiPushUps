@@ -83,7 +83,7 @@ class NotificationFragment : BaseFragment<FragmentNotificationBinding>() {
 
     private fun createAlarm(){
         SchedulerNotification().cancelAlarm(requireContext())
-        viewModel.dayDelay.value?.let { SchedulerNotification().setNotification(requireContext(),viewModel.getTimeInLocaleDateTime(),it)}
+        viewModel.dayDelay.value?.let { SchedulerNotification().setNotification(requireContext(),viewModel.getTimeInLocaleDateTime(),it.toLong())}
     }
 
 }

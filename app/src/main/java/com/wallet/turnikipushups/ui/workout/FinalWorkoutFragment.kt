@@ -12,6 +12,7 @@ import com.wallet.turnikipushups.db.converters.LevelOfTrainingConverter
 import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.models.LevelOfTraining
 import com.wallet.turnikipushups.ui.BaseFragment
+import com.wallet.turnikipushups.utils.SoundPooler
 
 
 class FinalWorkoutFragment : BaseFragment<FragmentFinallWorkoutBinding>() {

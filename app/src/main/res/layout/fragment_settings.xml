@@ -30,89 +30,90 @@
             android:layout_marginEnd="@dimen/_20sdp"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/synchronizationL"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/synchronizationL"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <TextView
-                    android:id="@+id/textView2"
-                    style="@style/text10px"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
-                    android:text="@string/turniki_uk_settings"
-                    app:layout_constraintEnd_toStartOf="@+id/synchronizationSwitch"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView2"-->
+<!--                    style="@style/text10px"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_7sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_15sdp"-->
+<!--                    android:text="@string/turniki_uk_settings"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/synchronizationSwitch"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
-                <TextView
-                    android:id="@+id/textView"
-                    style="@style/text14px"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_2sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
-                    android:text="@string/sinhronize_with_google_fit"
-                    app:layout_constraintEnd_toStartOf="@+id/synchronizationSwitch"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView"-->
+<!--                    style="@style/text14px"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/_2sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_15sdp"-->
+<!--                    android:text="@string/sinhronize_with_google_fit"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/synchronizationSwitch"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
 
-                <TextView
-                    style="@style/text10px"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/works_only_when_installed_on_the_phone_memory"
-                    android:textColor="@color/blue_light"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+<!--                <TextView-->
+<!--                    style="@style/text10px"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/works_only_when_installed_on_the_phone_memory"-->
+<!--                    android:textColor="@color/blue_light"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/textView" />-->
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/synchronizationSwitch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:thumbTint="@color/thumb_color"
-                    app:trackTint="@color/track_color" />
+<!--                <com.google.android.material.switchmaterial.SwitchMaterial-->
+<!--                    android:id="@+id/synchronizationSwitch"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:thumbTint="@color/thumb_color"-->
+<!--                    app:trackTint="@color/track_color" />-->
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray_dark_24"/>
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/gray_dark_24"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_height="@dimen/_44sdp">-->
+
+<!--                <TextView-->
+<!--                    style="@style/text14px"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_marginTop="@dimen/_5sdp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:text="@string/widget" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    style="@style/text10px"-->
+<!--                    android:text="@string/widget_desc"-->
+<!--                    android:textColor="@color/blue_light"/>-->
+<!--            </LinearLayout>-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/gray_dark_24"/>-->
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="@dimen/_44sdp">
-
-                <TextView
-                    style="@style/text14px"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:gravity="bottom"
-                    android:text="@string/widget" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    style="@style/text10px"
-                    android:text="@string/widget_desc"
-                    android:textColor="@color/blue_light"/>
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray_dark_24"/>
-
-            <LinearLayout
+                android:id="@+id/notificationL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -140,6 +141,7 @@
                 android:background="@color/gray_dark_24"/>
 
             <LinearLayout
+                android:id="@+id/backUpL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -167,6 +169,7 @@
                 android:background="@color/gray_dark_24"/>
 
             <LinearLayout
+                android:id="@+id/restoreL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -193,7 +196,9 @@
                 android:layout_height="1dp"
                 android:background="@color/gray_dark_24"/>
 
+
             <LinearLayout
+                android:id="@+id/deleteL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -221,6 +226,7 @@
                 android:background="@color/gray_dark_24"/>
 
             <LinearLayout
+                android:id="@+id/languageL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -247,32 +253,32 @@
                 android:layout_height="1dp"
                 android:background="@color/gray_dark_24"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="@dimen/_44sdp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_height="@dimen/_44sdp">-->
 
-                <TextView
-                    style="@style/text14px"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:gravity="bottom"
-                    android:text="@string/localisation" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    style="@style/text10px"
-                    android:text="@string/help_us_with_localisation"
-                    android:textColor="@color/blue_light"/>
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    style="@style/text14px"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_marginTop="@dimen/_5sdp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:text="@string/localisation" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    style="@style/text10px"-->
+<!--                    android:text="@string/help_us_with_localisation"-->
+<!--                    android:textColor="@color/blue_light"/>-->
+<!--            </LinearLayout>-->
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray_dark_24"/>
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/gray_dark_24"/>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -282,6 +288,7 @@
                 android:text="@string/other_settings"/>
 
             <LinearLayout
+                android:id="@+id/saitL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -336,6 +343,7 @@
                 android:background="@color/gray_dark_24"/>
 
             <LinearLayout
+                android:id="@+id/shareL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -363,6 +371,7 @@
                 android:background="@color/gray_dark_24"/>
 
             <LinearLayout
+                android:id="@+id/emailL"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="@dimen/_44sdp">
@@ -428,22 +437,22 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/gray_dark_24"/>
-
-
-            <TextView
-                style="@style/text14px"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_44sdp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/reminds_you_to_drink_water" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
                 android:layout_marginBottom="@dimen/_31sdp"
                 android:background="@color/gray_dark_24"/>
+
+
+<!--            <TextView-->
+<!--                style="@style/text14px"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/_44sdp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/reminds_you_to_drink_water" />-->
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/gray_dark_24"/>-->
 
         </LinearLayout>
     </ScrollView>

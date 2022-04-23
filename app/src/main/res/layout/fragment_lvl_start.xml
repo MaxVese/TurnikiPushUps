@@ -6,21 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.workout.LvlStartFragment">
 
-    <ImageView
-        android:id="@+id/volumeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_volume"
-        android:padding="@dimen/_20sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/_30sdp"
+        android:layout_margin="@dimen/_25sdp"
         android:backgroundTint="@color/pop_up_back"
         app:cardCornerRadius="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"

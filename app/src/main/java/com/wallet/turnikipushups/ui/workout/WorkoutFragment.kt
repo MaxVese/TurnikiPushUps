@@ -22,6 +22,8 @@ import com.wallet.turnikipushups.di.ViewModelFactory
 import com.wallet.turnikipushups.models.LevelOfTraining
 import com.wallet.turnikipushups.service.CounterPullUpsService
 import com.wallet.turnikipushups.ui.BaseFragment
+import com.wallet.turnikipushups.ui.freestyle.BottomSheetCorrectFragment
+import com.wallet.turnikipushups.utils.SoundPooler
 
 class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
     override fun bind(inflater: LayoutInflater): WorkoutFragmentBinding {
@@ -34,6 +36,7 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
         }
     }
 
+    val soundPooler = SoundPooler()
     val r = WorkoutRepsReceiver()
     val setsTextViews : ArrayList<TextView> = arrayListOf()
     val countDownTimer:CountDownTimer by lazy {
@@ -42,6 +45,11 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
             override fun onTick(p0: Long) {
                 val timerValue = p0.div(1000).toInt()
                 viewModel.countReps.value = Pair(timerValue,true)
+                if(timerValue == 3  && viewModel.isVolumeEnable.value   == true) soundPooler.finalRestSound()
+                if(timerValue == 0  && viewModel.isVolumeEnable.value   == true){
+                    viewModel.nextSet()
+                    soundPooler.svistSound()
+                }
             }
             override fun onFinish() {
                 //add your code here
@@ -50,8 +58,9 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
     }
 
     override fun initView() {
+        soundPooler.initSound(requireContext())
         r.register()
-        requireContext().startService(Intent(requireContext(),CounterPullUpsService::class.java))
+        requireContext().startForegroundService(Intent(requireContext(),CounterPullUpsService::class.java))
         val id = arguments?.getInt("id") ?: 1
         viewModel.workout.observe(viewLifecycleOwner){
             it.listReps.forEach {
@@ -71,6 +80,7 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
                 binding?.setLayout?.addView(it)
             }
             viewModel.currentSet.value = 0
+            viewModel.countReps.value = Pair(it.listReps[0],false)
         }
         viewModel.currentSet.observe(viewLifecycleOwner){
             setsTextViews.forEachIndexed { index, textView ->
@@ -79,9 +89,6 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
                 }else{
                     textView.alpha = 1f
                 }
-            }
-            viewModel.workout.value?.let { workout -> viewModel.countReps.value =
-                Pair(workout.listReps[it],false)
             }
         }
         viewModel.countReps.observe(viewLifecycleOwner){
@@ -93,29 +100,52 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
                 binding?.proceedBtn?.isInvisible = true
                 binding?.toDoText?.text = getToDoText(it.first)
             }
-            if(it.first == 0){
-                viewModel.currentSet.value?.let {currentSet ->
-                    if(viewModel.workout.value?.listReps?.size?.minus(1)?:0 <= currentSet){
-                        viewModel.saveWorkout()
-                    }
-                }
-                if(it.second){
-                    viewModel.currentSet.value = viewModel.currentSet.value?.plus(1)
-                }else{
-                    countDownTimer.start()
-                }
-            }
         }
         viewModel.isFinish.observe(viewLifecycleOwner){
             if(it == true) findNavController().navigate(R.id.action_workoutFragment_to_finalWorkoutFragment,
                 bundleOf("lvlOfTrain" to LevelOfTrainingConverter().fromLevelOfTraining(viewModel.workout.value?.lvlOfTraining?:LevelOfTraining.BEGINNER)))
         }
+        viewModel.isVolumeEnable.observe(viewLifecycleOwner){
+            binding?.volumeBtn?.setImageDrawable(ResourcesCompat.getDrawable(resources,if(it){
+                R.drawable.ic_volume
+            }else{
+                R.drawable.ic_volume_disable
+            },null))
+        }
+        binding?.volumeBtn?.setOnClickListener {
+            viewModel.changeVolume()
+        }
         binding?.proceedBtn?.setOnClickListener {
             countDownTimer.cancel()
-            viewModel.currentSet.value = viewModel.currentSet.value?.plus(1)
+            viewModel.nextSet()
         }
         binding?.homeBtn?.setOnClickListener {
             findNavController().popBackStack()
+        }
+        binding?.editBtn?.setOnClickListener {
+            BottomWorkoutFragment(
+                full = {
+                      if(viewModel.countReps.value?.second == false){
+                          viewModel.currentSet.value?.let {currentSet ->
+                              if(viewModel.workout.value?.listReps?.size?.minus(1)?:0 <= currentSet){
+                                  viewModel.saveWorkout()
+                                  soundPooler.finalSound()
+                              }else{
+                                  countDownTimer.start()
+                                  soundPooler.setEndSound()
+                              }
+                          }
+                      }
+                },
+                independently = {
+                    viewModel.saveWorkout()
+                    soundPooler.finalSound()
+                },
+                exit = {
+                    findNavController().popBackStack()
+                }
+            )
+                .show(requireActivity().supportFragmentManager,"tag")
         }
         viewModel.getWorkout(id)
     }
@@ -133,7 +163,20 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
         override fun onReceive(c: Context, i: Intent) {
             viewModel.countReps.value?.let {
                 if(!it.second){
-                    viewModel.countReps.value = Pair(it.first-1,false)
+                    if(it.first-1 == 0){
+                        viewModel.currentSet.value?.let {currentSet ->
+                            if(viewModel.workout.value?.listReps?.size?.minus(1)?:0 <= currentSet){
+                                viewModel.saveWorkout()
+                                soundPooler.finalSound()
+                            }else{
+                                countDownTimer.start()
+                                soundPooler.setEndSound()
+                            }
+                        }
+                    }else {
+                        viewModel.countReps.value = Pair(it.first - 1, false)
+                    }
+                    if(viewModel.isVolumeEnable.value   == true) soundPooler.tickSound()
                 }
             }
         }
@@ -149,11 +192,11 @@ class WorkoutFragment : BaseFragment<WorkoutFragmentBinding>() {
         }
     }
 
-    override fun onDestroyView() {
+    override fun onDestroy() {
         requireContext().stopService(Intent(requireContext(),CounterPullUpsService::class.java))
         r.unregister()
         countDownTimer.cancel()
-        super.onDestroyView()
+        super.onDestroy()
     }
 
 }

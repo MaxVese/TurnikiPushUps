@@ -12,7 +12,7 @@ class SchedulerNotification {
     private var alarmManager:AlarmManager? = null
     val requestCode = 3141245
 
-    fun setNotification(context: Context,timeInMillis:Long,delay:Int){
+    fun setNotification(context: Context,timeInMillis:Long,delay:Long){
         alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
 
         val alarmIntent = Intent(context,AlarmReceiver::class.java)

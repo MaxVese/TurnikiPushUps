@@ -33,7 +33,8 @@
         tools:layout="@layout/fragment_freestyle" >
         <action
             android:id="@+id/action_freestyleFragment_to_lvlStartFragment"
-            app:destination="@id/lvlStartFragment" />
+            app:destination="@id/lvlStartFragment"
+            app:popUpTo="@id/mainFragment"/>
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"
@@ -44,7 +45,11 @@
         android:id="@+id/settingsFragment"
         android:name="com.wallet.turnikipushups.ui.settings.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/statisticsFragment"
         android:name="com.wallet.turnikipushups.ui.statistics.StatisticsFragment"
@@ -72,6 +77,9 @@
             android:id="@+id/action_lvlStartFragment_to_workoutFragment"
             app:destination="@id/workoutFragment"
             app:popUpTo="@id/mainFragment"/>
+        <action
+            android:id="@+id/action_lvlStartFragment_to_chooseLevelFragment"
+            app:destination="@id/chooseLevelFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutFragment"
@@ -92,4 +100,9 @@
             android:id="@+id/action_finalWorkoutFragment_to_startWorkoutFragment"
             app:destination="@id/startWorkoutFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chooseLevelFragment"
+        android:name="com.wallet.turnikipushups.ui.workout.ChooseLevelFragment"
+        android:label="fragment_choose_level"
+        tools:layout="@layout/fragment_choose_level" />
 </navigation>

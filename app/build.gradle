@@ -68,6 +68,10 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
 
+    implementation 'com.mikepenz:fastadapter:5.2.2'
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation 'de.raphaelebner:roomdatabasebackup:1.0.0-beta10'
+
 }
