@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId "com.wallet.turnikipushups"
-        minSdk 28
+        minSdk 23
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 8
+        versionName "1.16"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -74,4 +74,5 @@ dependencies {
 
     implementation 'de.raphaelebner:roomdatabasebackup:1.0.0-beta10'
 
+    implementation 'com.android.billingclient:billing:4.1.0'
 }

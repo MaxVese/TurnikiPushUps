@@ -40,7 +40,9 @@ class FreestyleFragment : BaseFragment<FragmentFreestyleBinding>() {
             viewModel.isFinish.observe(viewLifecycleOwner){
                 if(it){
                     if(isTest){
-                        findNavController().navigate(R.id.action_freestyleFragment_to_lvlStartFragment)
+                        PopUps().finishTestPopUp(requireActivity()){
+                            findNavController().navigate(R.id.action_freestyleFragment_to_lvlStartFragment)
+                        }
                     }else{
                         PopUps().finishFreestylePopUp(requireActivity(),viewModel.count.value?:0){
                             findNavController().popBackStack()

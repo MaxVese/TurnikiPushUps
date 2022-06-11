@@ -16,7 +16,6 @@ import com.wallet.turnikipushups.db.AppSharedPreferense
 
 internal class NotificationHelper(val context: Context) {
     fun createNotification() {
-        // Create an Intent for the activity you want to start
         val resultIntent = Intent(context, MainActivity::class.java)
         val resultPendingIntent: PendingIntent? = TaskStackBuilder.create(context).run {
             addNextIntentWithParentStack(resultIntent)

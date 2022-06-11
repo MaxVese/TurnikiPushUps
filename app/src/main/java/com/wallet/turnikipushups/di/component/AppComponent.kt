@@ -1,8 +1,10 @@
 package com.wallet.turnikipushups.di.component
 
 import android.app.Application
+import android.content.Context
 import com.wallet.turnikipushups.activities.StartActivity
 import com.wallet.turnikipushups.di.modules.DBModule
+import com.wallet.turnikipushups.di.modules.PurchaseModule
 import com.wallet.turnikipushups.di.modules.ViewModelModule
 import com.wallet.turnikipushups.ui.freestyle.FreestyleViewModel
 import com.wallet.turnikipushups.ui.main.MainViewModel
@@ -19,13 +21,16 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [DBModule::class,ViewModelModule::class])
+@Component(modules = [DBModule::class,ViewModelModule::class,PurchaseModule::class])
 interface AppComponent {
     @Component.Builder
     interface Builder {
 
         @BindsInstance
         fun application(application: Application): Builder
+
+        @BindsInstance
+        fun context(context: Context): Builder
 
         fun build(): AppComponent
     }

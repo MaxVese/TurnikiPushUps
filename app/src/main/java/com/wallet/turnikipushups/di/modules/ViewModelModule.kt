@@ -1,5 +1,6 @@
 package com.wallet.turnikipushups.di.modules
 
+import com.wallet.turnikipushups.BillingClientWrapper
 import com.wallet.turnikipushups.db.AppDatabase
 import com.wallet.turnikipushups.db.AppSharedPreferense
 import com.wallet.turnikipushups.db.dao.StatPushUpsDao
@@ -39,8 +40,8 @@ class ViewModelModule {
         SettingsViewModel(appDatabase,appSharedPrefer)
 
     @Provides
-    fun provideChooseLevelViewModel(workoutDao: WorkoutDao,appSharedPrefer: AppSharedPreferense): ChooseLevelViewModel =
-        ChooseLevelViewModel(workoutDao,appSharedPrefer)
+    fun provideChooseLevelViewModel(workoutDao: WorkoutDao,appSharedPrefer: AppSharedPreferense,billingClientWrapper: BillingClientWrapper): ChooseLevelViewModel =
+        ChooseLevelViewModel(workoutDao,appSharedPrefer,billingClientWrapper)
 
     @Provides
     fun provideWorkoutViewModel(statPushUpsDao: StatPushUpsDao,workoutDao: WorkoutDao,appSharedPrefer: AppSharedPreferense): WorkoutViewModel =

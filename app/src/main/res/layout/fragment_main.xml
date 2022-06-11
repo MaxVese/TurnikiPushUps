@@ -133,11 +133,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/trainBtn"
-        style="@style/text20px"
+        style="@style/text32px"
+        android:textStyle="bold"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_44sdp"
-        android:layout_marginHorizontal="@dimen/_58sdp"
-        android:layout_marginTop="@dimen/_33sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginHorizontal="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_22sdp"
         android:backgroundTint="@color/red"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -154,7 +155,7 @@
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_42sdp"
         android:paddingHorizontal="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:backgroundTint="@color/background"
         android:fontFamily="@font/inter"
         android:insetTop="0dp"
@@ -168,7 +169,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/trainBtn"
-        app:strokeColor="@color/blue" />
+        app:strokeColor="@color/white" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/statistics"
@@ -176,7 +177,7 @@
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_42sdp"
         android:paddingHorizontal="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_16sdp"
         android:backgroundTint="@color/background"
         android:fontFamily="@font/inter"
         android:insetTop="0dp"
@@ -190,6 +191,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/freestyle"
         app:layout_constraintTop_toBottomOf="@+id/trainBtn"
-        app:strokeColor="@color/blue" />
+        app:strokeColor="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

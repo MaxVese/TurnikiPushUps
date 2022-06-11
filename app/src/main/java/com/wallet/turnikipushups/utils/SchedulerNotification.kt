@@ -27,7 +27,7 @@ class SchedulerNotification {
             alarmManager?.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 timeInMillis,
-                AlarmManager.INTERVAL_DAY*delay,
+                86400000L*delay,
                 pendingIntent
             )
         }else{

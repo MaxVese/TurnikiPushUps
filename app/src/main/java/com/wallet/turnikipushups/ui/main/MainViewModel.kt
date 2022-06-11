@@ -40,8 +40,8 @@ class MainViewModel @Inject constructor(val statPushUpsDao: StatPushUpsDao,val w
         }
     }
 
-    fun getCountWorkouts():Long{
-        return statPushUpsDao.getCountWorkouts()
+    fun getSum():Long{
+        return statPushUpsDao.getSumCountWorkouts()
     }
 
     fun getBestCount():Int{

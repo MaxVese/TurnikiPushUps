@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Турніки.укр</string>
-    <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ,\nТРЕНУЙСЯ!</string>
+    <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ, ТРЕНУЙСЯ!</string>
     <string name="best">Лучший</string>
     <string name="average">Среднее</string>
     <string name="workout">Тренировка</string>
@@ -73,11 +73,16 @@
     <string name="easy">Легко</string>
     <string name="right">Как раз</string>
     <string name="hard">Тяжело</string>
-    <string name="beginer">Новичёк</string>
+    <string name="beginer">Новичок</string>
     <string name="medium">Любитель</string>
     <string name="pro">Профессионал</string>
     <string name="next_set">Полный</string>
     <string name="independently">Самостоятельно</string>
     <string name="exit">Выйти</string>
-    <string name="notify">Notification</string>
+    <string name="notify" translatable="false">Notification</string>
+    <string name="go_to_tren">Перейти к тренировкам</string>
+    <string name="ahuenno">Отлично!</string>
+    <string name="test_pop_up_text">На основе вашей физической формы, мы составили вам оптимальную программу тренировок</string>
+    <string name="buy">Купить</string>
+    <string name="pre_purchase_text">Эта программа тренировок доступна только на про версии</string>
 </resources>

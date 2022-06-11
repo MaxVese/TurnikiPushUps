@@ -49,7 +49,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/startBtn"
-        style="@style/text20px"
+        style="@style/text32px"
+        android:textStyle="bold"
         android:layout_width="0dp"
         android:layout_height="@dimen/_44sdp"
         android:layout_marginHorizontal="@dimen/_58sdp"

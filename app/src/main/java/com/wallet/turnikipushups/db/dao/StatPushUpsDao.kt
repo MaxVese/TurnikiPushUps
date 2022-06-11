@@ -24,8 +24,8 @@ interface StatPushUpsDao {
     @Query("SELECT * FROM statPushUps")
     fun getAll(): Flow<List<StatPushUps>>
 
-    @Query("SELECT COUNT(*) FROM statPushUps WHERE count > 0")
-    fun getCountWorkouts():Long
+    @Query("SELECT SUM(count) FROM statPushUps WHERE count > 0")
+    fun getSumCountWorkouts():Long
 
     @Query("SELECT MAX(count) as max FROM statPushUps")
     fun getBestCount():Int

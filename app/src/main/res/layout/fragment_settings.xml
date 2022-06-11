@@ -310,32 +310,32 @@
                     android:textColor="@color/blue_light"/>
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray_dark_24"/>
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="@color/gray_dark_24"/>-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="@dimen/_44sdp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_height="@dimen/_44sdp">-->
 
-                <TextView
-                    style="@style/text14px"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:gravity="bottom"
-                    android:text="@string/pro_version" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    style="@style/text10px"
-                    android:text="@string/More_from_our_app"
-                    android:textColor="@color/blue_light"/>
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    style="@style/text14px"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_marginTop="@dimen/_5sdp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:text="@string/pro_version" />-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    style="@style/text10px"-->
+<!--                    android:text="@string/More_from_our_app"-->
+<!--                    android:textColor="@color/blue_light"/>-->
+<!--            </LinearLayout>-->
 
             <View
                 android:layout_width="match_parent"

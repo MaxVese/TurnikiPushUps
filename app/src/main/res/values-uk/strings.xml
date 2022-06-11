@@ -1,5 +1,5 @@
 <resources>
-    <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ,\nТРЕНУЙСЯ!</string>
+    <string name="dont_be_lazy_practice">НЕ ЛІНУЙСЯ, ТРЕНУЙСЯ!</string>
     <string name="best">Найкращий</string>
     <string name="average">Середнє</string>
     <string name="workout">Тренування</string>
@@ -78,4 +78,9 @@
     <string name="next_set">Повний</string>
     <string name="independently">Самостійно</string>
     <string name="exit">Вийти</string>
+    <string name="go_to_tren">Перейти до тренувань</string>
+    <string name="ahuenno">Чудово!</string>
+    <string name="test_pop_up_text">На основі вашої фізичної форми ми розробили вам оптимальну програму тренувань</string>
+    <string name="buy">Купити</string>
+    <string name="pre_purchase_text">Ця програма тренувань доступна лише на про версії</string>
 </resources>

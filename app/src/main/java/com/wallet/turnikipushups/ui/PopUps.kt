@@ -102,6 +102,48 @@ class PopUps {
         )
     }
 
+    inline fun finishTestPopUp(context: Activity, crossinline finish:() -> Unit) {
+        val customLayout: FinishTestPopUpBinding =
+            FinishTestPopUpBinding.inflate(LayoutInflater.from(context))
+        val width = LinearLayout.LayoutParams.MATCH_PARENT
+        val height = LinearLayout.LayoutParams.MATCH_PARENT
+        val window = PopupWindow(customLayout.root, width, height, true)
+        window.isOutsideTouchable = false
+        customLayout.dismissBtn.setOnClickListener {
+            window.dismiss()
+            finish()
+        }
+
+        window.contentView = customLayout.root
+        window.showAtLocation(
+            context.findViewById<View>(android.R.id.content).rootView,
+            Gravity.CENTER,
+            0,
+            -100
+        )
+    }
+
+    inline fun purchasePopUp(context: Activity, crossinline finish:() -> Unit) {
+        val customLayout: PrePurchasePopUpBinding =
+            PrePurchasePopUpBinding.inflate(LayoutInflater.from(context))
+        val width = LinearLayout.LayoutParams.MATCH_PARENT
+        val height = LinearLayout.LayoutParams.WRAP_CONTENT
+        val window = PopupWindow(customLayout.root, width, height, true)
+        window.isOutsideTouchable = false
+        customLayout.dismissBtn.setOnClickListener {
+            window.dismiss()
+            finish()
+        }
+
+        window.contentView = customLayout.root
+        window.showAtLocation(
+            context.findViewById<View>(android.R.id.content).rootView,
+            Gravity.CENTER,
+            0,
+            0
+        )
+    }
+
 
     fun showTimePicker(context: Activity,timeSetListener: TimePickerDialog.OnTimeSetListener){
         val dateAndTime = Calendar.getInstance()

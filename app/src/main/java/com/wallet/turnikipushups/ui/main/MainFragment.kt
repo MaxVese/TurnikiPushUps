@@ -28,7 +28,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         }
         viewModel.getAllStats()
         withBinding {
-            totalValue.text = viewModel.getCountWorkouts().toString()
+            totalValue.text = viewModel.getSum().toString()
             bestValue.text = viewModel.getBestCount().toString()
             averageValue.text = viewModel.getAverageCount().toString()
             freestyle.setOnClickListener {
